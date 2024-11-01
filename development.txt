@@ -1,0 +1,6 @@
+// requirement sheet
+
+1. images
+2. contents
+3. design asspects
+4. hosting credentials

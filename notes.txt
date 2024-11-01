@@ -1,0 +1,47 @@
+
+
+twitter - https://twitter.com/virucutjp
+insta - https://www.instagram.com/virucut_india_private_limited/
+linked in - https://in.linkedin.com/in/virucut-india-private-limited-8b7625317
+
+Iteration 1 - 50 hours
+
+1. static page
+pages
+    landing page -- done
+    contact us -- name, comapany name, email, number
+    about us -- pending
+    products -- 
+    testimonials / success story -- if need
+    awards
+    blogs/ case study
+    carrers
+
+
+
+components
+    header -- done
+    footer -- done
+    banner -- done
+    aboutus -- done
+    hero -- done
+    mottion banner -- done
+    products view -- single -- done
+    services -- done
+    contact us -- done
+    buttons -- done
+    data cards -- done
+    history
+    mission vision
+    FAQ -- done
+    GA -- need account
+
+
+requirements
+
+Contents for 
+1. About us - who you are? and whats your speacility 
+2. Products - List and Categories of our products, Images and detailed contents
+3. Testimonials or Customer Success story or awards or blogs or case study - contents and Images
+4. Images for Website
+5. Your Mission and Vision

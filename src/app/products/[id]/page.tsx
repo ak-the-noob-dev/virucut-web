@@ -17,9 +17,22 @@ export default function SingleProductView() {
       <Header />
       {/* <ProductSingleView /> */}
       <ProductsHero
-        imgUrl="" //"https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+        imgUrl=""
         className=""
       />
+      <section className="min-h-[40vh] bg-white p-12 items-center">
+        
+<h2 className="text-4xl font-extrabold font-verdana dark:text-white">Payments tool for companies</h2>
+<p className="my-4 text-m text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</p>
+<p className="mb-4 text-m font-normal text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
+<a href="#" className="inline-flex items-center text-lg text-blue-600 dark:text-blue-500 hover:underline">
+Read more
+<svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+</svg>
+</a>
+
+      </section>
       <ProductsWCategory
         products={[
           {

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section className="w-full min-h-[80vh] bg-white flex md:flex-col md:items-center md:justify-center items-center md:pb-10">
+    <section className="w-full min-h-[80vh] bg-white flex md:flex-col md:items-center md:justify-center items-center pb-10">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
           <div className="relative h-[500px] md:h-[600px]">
@@ -14,7 +14,10 @@ export default function About() {
                 alt="About Us Image 1"
                 className="rounded object-cover w-full h-full"
                 height="560"
-                src="/images/aboutus-banner-1.jpg"
+                src={
+                  process.env.BASE_URL +
+                  `/api/static/images/${"aboutus-banner-1.jpg"}`
+                }
                 width="450"
               />
             </div>
@@ -23,7 +26,10 @@ export default function About() {
                 alt="About Us Image 3"
                 className="rounded object-cover w-full h-full"
                 height="300"
-                src="/images/aboutus-banner-2.jpg"
+                src={
+                  process.env.BASE_URL +
+                  `/api/static/images/${"aboutus-banner-2.jpg"}`
+                }
                 width="250"
               />
             </div>
@@ -83,7 +89,7 @@ export function AboutUsPage() {
 
   return (
     <>
-      <section className="relative bg-gradient-to-b from-purple-500 to-indigo-700 text-white py-48">
+      <section className="relative bg-gradient-to-b from-blue-500 to-indigo-900 text-white py-48 font-verdana">
         <div className="container mx-auto px-6 text-center">
           <motion.h1
             className="text-6xl font-extrabold"
@@ -109,7 +115,7 @@ export function AboutUsPage() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <motion.h2
-            className="text-4xl font-bold text-gray-800 text-center mb-10"
+            className="text-4xl font-bold text-gray-800 text-center mb-10 font-verdana"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -147,7 +153,7 @@ export function AboutUsPage() {
               <Image
                 width={500}
                 height={500}
-                src="/images/hero3.jpg"
+                src={process.env.BASE_URL + `/api/static/images/${"hero3.jpg"}`}
                 alt="Industrial Tools and Solutions"
                 className="w-full h-64 object-cover"
               />
@@ -160,7 +166,7 @@ export function AboutUsPage() {
       <section className="bg-gray-50 py-20">
         <div className="container mx-auto px-6">
           <motion.h3
-            className="text-3xl font-bold text-gray-800 text-center mb-10"
+            className="text-3xl font-bold text-gray-800 text-center mb-10 font-verdana"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
@@ -192,7 +198,9 @@ export function AboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h4 className="text-2xl font-bold text-gray-800">Quality</h4>
+              <h4 className="text-2xl font-bold text-gray-800 font-verdana">
+                Quality
+              </h4>
               <p className="text-gray-600">
                 We ensure excellence in every solution we provide, from
                 precision tools to complete system designs.
@@ -205,7 +213,9 @@ export function AboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h4 className="text-2xl font-bold text-gray-800">Innovation</h4>
+              <h4 className="text-2xl font-bold text-gray-800 font-verdana">
+                Innovation
+              </h4>
               <p className="text-gray-600">
                 We embrace cutting-edge technologies to deliver innovative
                 solutions that meet the unique needs of our clients.
@@ -218,7 +228,9 @@ export function AboutUsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h4 className="text-2xl font-bold text-gray-800">Precision</h4>
+              <h4 className="text-2xl font-bold text-gray-800 font-verdana">
+                Precision
+              </h4>
               <p className="text-gray-600">
                 Our commitment to precision ensures that every product and
                 solution is designed to perfection.
@@ -229,8 +241,8 @@ export function AboutUsPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
+      <section className="bg-gradient-to-r from-blue-800 to-emerald-600 text-white py-20">
+        <div className="container mx-auto px-6 text-center font-verdana">
           <motion.h3
             className="text-3xl font-bold"
             initial={{ opacity: 0 }}

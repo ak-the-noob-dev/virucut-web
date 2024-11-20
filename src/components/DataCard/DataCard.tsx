@@ -11,7 +11,7 @@ export default function HeroCard() {
       <a href="#">
         <Image
           className="rounded-t-lg"
-          src="/images/offerings-1.png"
+          src={process.env.BASE_URL + `/api/static/images/${"offerings-1.png"}`}
           alt="offerings-1.png"
           width={350}
           height={300}
@@ -68,7 +68,12 @@ export function Card2({ serviceName, serviceInfo, imagePath }: Props) {
       <div className="min-h-[300px]">
         <Image
           src={
-            imagePath && imagePath != "" ? imagePath : "/images/offerings-1.png"
+            process.env.BASE_URL +
+            `/api/static/images/${
+              imagePath && imagePath != ""
+                ? imagePath
+                : "/images/offerings-1.png"
+            }`
           }
           className="w-full my-6 object-fill"
           width={300}
@@ -111,19 +116,19 @@ export function CardWithBackImage({
   imagePath,
 }: CardWithBackImage) {
   return (
-    <div className="relative grid w-[350px] h-[450px] flex-col items-end justify-center overflow-hidden rounded-lg bg-white mx-2 gap-5">
+    <div className="relative grid w-40 h-64 md:w-72 md:h-[28rem] flex-col items-end justify-center overflow-hidden rounded-lg mx-2 gap-5 md:gap-20 border-[1px]">
       <div
         className="absolute inset-0 h-full w-full bg-cover bg-center"
         style={{ backgroundImage: `url(${imagePath})` }}
       >
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50"></div>
+        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/50 via-black/30"></div>
       </div>
       <div className="relative text-center p-6 px-6 py-14 md:px-12">
         <h2 className="mb-6 text-3xl font-medium text-white">
           {productName || "Product Name"}
         </h2>
         <Link href={href || "#"} className="">
-          <h5 className="mb-4 text-xl font-semibold text-slate-300 cursor-pointer hover:text-green-600">
+          <h5 className="mb-4 text-xl font-semibold text-slate-300 cursor-pointer hover:text-green-400">
             Know More
           </h5>
         </Link>

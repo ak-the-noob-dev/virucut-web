@@ -1,0 +1,58 @@
+{
+  "clients": [
+    "danieli.png",
+    "avtec.png",
+    "bergen.png",
+    "bonfiglioli.png",
+    "brakes-india.png",
+    "bray.png",
+    "delphi.png",
+    "dietech-india.png",
+    "gmt.png",
+    "infimental.png",
+    "karmen.png",
+    "mm-forgings.png",
+    "nittan.png",
+    "opel.png",
+    "peekay.png",
+    "plast.png",
+    "pmi.png",
+    "sri.png",
+    "tafe.png",
+    "toshiba.png",
+    "triveni.png",
+    "tvs-2.png",
+    "tvs.png",
+    "wheels-india.png",
+    "yamaha.png"
+  ],
+  "partners": [
+    "bibielle.png",
+    "kingdom.png",
+    "smooth.png",
+    "vrvA2Z.png",
+    "ematec.png",
+    "san.png",
+    "strauss.png"
+  ],
+  "hero": [
+    {
+      "title": "some title",
+      "subtitle": "lorem ipsum some comment",
+      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
+      "image": "hero1.jpg"
+    },
+    {
+      "title": "some title",
+      "subtitle": "lorem ipsum some comment",
+      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
+      "image": "hero2.jpg"
+    },
+    {
+      "title": "some title",
+      "subtitle": "lorem ipsum some comment",
+      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
+      "image": "hero3.jpg"
+    }
+  ]
+}

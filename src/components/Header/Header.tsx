@@ -6,8 +6,6 @@
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
-// src/components/Header/Header.tsx
 "use client";
 
 import React, { useState } from "react";
@@ -26,10 +24,22 @@ import BannerCard from "../BannerCard/BannerCard";
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProducts, setshowProducts] = useState(false);
+  const [productData, setsProductData] = useState([]);
 
   const handleToggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
   };
+
+  const getProducts = async () => {
+    const res = await fetch(process.env.BASE_URL + "/api/products");
+    const data = await res.json();
+    setsProductData(data?.data || []);
+  };
+
+  if (productData.length === 0) {
+    getProducts();
+  }
+
   // const handleNavTo = (id: string): void => {
   //   const element = document.getElementById(id);
   //   if (element) {
@@ -41,11 +51,9 @@ const Header: React.FC = () => {
   // };
 
   return (
-    <header className=" bg-prussian_blue font-sans tracking-wide relative z-50">
-      {/* shadow-md */}
-      {/* Top Bar */}
-      <section className="text-white py-2 ">
-        <p className="text-sm pl-20 flex flex-wrap items-center">
+    <header className="font-sans tracking-wide relative z-50">
+      <section className="text-white py-2 bg-prussian_blue ">
+        <p className="text-sm pl-5 md:pl-20 flex flex-wrap items-center">
           <Link
             href={"mailto:inquiry@virucut.in"}
             className="flex gap-3 hover:text-[var(--main-green)]"
@@ -53,14 +61,14 @@ const Header: React.FC = () => {
             <IoMail style={{ fontSize: 18 }} color="hsl(119, 85%, 37%)" />{" "}
             inquiry@virucut.in
           </Link>
-          <span className="lg:pl-7 flex flex-wrap items-center gap-3">
+          <span className=" pl-5 lg:pl-7 flex flex-wrap items-center gap-2">
             <IoLocationSharp
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
             />
             chennai, India.
           </span>
-          <span className="lg:pl-7 flex flex-wrap items-center gap-3">
+          <span className="lg:pl-7 flex flex-wrap items-center gap-2 mt-2 md:mt-0 lg:mt-0">
             <IoIosPhonePortrait
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
@@ -75,7 +83,7 @@ const Header: React.FC = () => {
         {/* Logo */}
         <Link href="/" passHref>
           <Image
-            src="/images/logo.png"
+            src={process.env.BASE_URL + `/api/static/images/${"logo.png"}`}
             alt="logo"
             width={144}
             height={60}
@@ -94,16 +102,38 @@ const Header: React.FC = () => {
           <ul className="lg:flex lg:gap-x-5 max-lg:space-y-3 ">
             {/* Logo for Mobile Menu */}
             <li
-              className={`${isMenuOpen ? "block" : "hidden"} mb-6 max-lg:block`}
+              className={`${
+                isMenuOpen ? "block" : "hidden"
+              } mb-2 md:mb-6 lg:mb-6 max-lg:block`}
             >
-              <Link href="/" passHref>
+              <Link href="/" passHref className="flex flex-row">
                 <Image
-                  src="/images/logo.png"
+                  src={
+                    process.env.BASE_URL + `/api/static/images/${"logo.png"}`
+                  }
                   alt="logo"
                   width={144}
                   height={60}
-                  className="w-36"
+                  className="w-32 md:mx-auto md:w-36 lg:w-36 h-auto"
                 />
+                <div className="flex max-lg:ml-auto">
+                  {/* Open Menu Button */}
+                  <button
+                    id="toggleOpen"
+                    className="lg:hidden"
+                    aria-label="Open Menu"
+                    onClick={handleToggleMenu}
+                  >
+                    {isMenuOpen ? (
+                      <IoCloseCircleOutline
+                        className="w-7 h-7"
+                        color="hsl(119, 85%, 37%)"
+                      />
+                    ) : (
+                      <></>
+                    )}
+                  </button>
+                </div>
               </Link>
             </li>
             {/* Navigation Items */}
@@ -112,7 +142,8 @@ const Header: React.FC = () => {
               { name: "About", href: "/about-us", id: "about" },
               { name: "Products", href: "#", id: "products" },
               { name: "Blog", href: "#", id: "blog" },
-              { name: "Contact", href: "/contact-us", id: "contact-us" },
+              { name: "Careers", href: "/careers", id: "careers" },
+              { name: "Contact Us", href: "/contact-us", id: "contact-us" },
             ].map((item) => (
               <li
                 key={item.name}
@@ -123,6 +154,7 @@ const Header: React.FC = () => {
                   onClick={() => {
                     if (item.id === "products") {
                       setshowProducts(true);
+                      setIsMenuOpen(false);
                     }
                   }}
                   passHref
@@ -145,10 +177,7 @@ const Header: React.FC = () => {
             onClick={handleToggleMenu}
           >
             {isMenuOpen ? (
-              <IoCloseCircleOutline
-                className="w-7 h-7"
-                color="hsl(119, 85%, 37%)"
-              />
+              <></>
             ) : (
               <IoMenuOutline className="w-7 h-7" color="hsl(119, 85%, 37%)" />
             )}
@@ -156,26 +185,16 @@ const Header: React.FC = () => {
         </div>
       </div>
       {showProducts ? (
-        <BannerCard
-          onClickOutside={() => setshowProducts(false)}
-          productData={[
-            {
-              imgUrl: "/images/service1.jpg",
-              productName: "Machining",
-              id: "1",
-            },
-            {
-              imgUrl: "/images/service1.jpg",
-              productName: "Machining",
-              id: "2",
-            },
-            {
-              imgUrl: "/images/service1.jpg",
-              productName: "Machining Machining",
-              id: "3",
-            },
-          ]}
-        />
+        <div className="absolute m-auto md:right-20 lg:right-20 right-0 sm:top-1/2 md:top-full">
+          <span className="block md:hidden lg:hidden text-2xl font-verdana text-center bg-gray-200 p-2">
+            {" "}
+            Our Products{" "}
+          </span>
+          <BannerCard
+            onClickOutside={() => setshowProducts(false)}
+            productData={productData}
+          />
+        </div>
       ) : null}
     </header>
   );

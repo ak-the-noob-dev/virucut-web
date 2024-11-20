@@ -14,7 +14,7 @@ export default function Footer() {
         <div>
           <a href="/">
             <Image
-              src="/images/logo.png"
+              src={process.env.BASE_URL + `/api/static/images/${"logo.png"}`}
               alt="logo"
               className="w-60 h-36"
               width={200}

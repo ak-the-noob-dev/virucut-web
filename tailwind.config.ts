@@ -4,10 +4,18 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    // screens: {
+    //   sm: "576px",
+    //   md: "960px",
+    //   lg: "1440px",
+    //   xl: "1920px",
+    //   "2xl": "2560px",
+    // },
     extend: {
       fontFamily: {
         mukta: ["Mukta", "sans-serif"],
@@ -34,6 +42,15 @@ const config: Config = {
       },
       scrollbar: {
         thin: "8px",
+      },
+      animation: {
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
+      },
+      keyframes: {
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
     },
   },

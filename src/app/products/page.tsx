@@ -86,7 +86,9 @@ export default function ProductView() {
               <Image
                 width={480}
                 height={480}
-                src="/images/service1.jpg"
+                src={
+                  process.env.BASE_URL + `/api/static/images/${"service1.jpg"}`
+                }
                 className="w-full h-full object-cover"
                 alt="Dining Experience"
               />
@@ -196,11 +198,11 @@ export default function ProductView() {
                 <g
                   fill="none"
                   stroke="#007bff"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-miterlimit="10"
-                  stroke-width="40"
-                  clip-path="url(#a)"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeMiterlimit="10"
+                  width="40"
+                  clipPath="url(#a)"
                   transform="matrix(1.33 0 0 -1.33 0 682.667)"
                 >
                   <path
@@ -241,7 +243,10 @@ export default function ProductView() {
                   key={index}
                 >
                   <Image
-                    src="/images/aboutus-banner-2.jpg"
+                    src={
+                      process.env.BASE_URL +
+                      `/api/static/images/${"aboutus-banner-2.jpg"}`
+                    }
                     alt="image"
                     width={100}
                     height={100}

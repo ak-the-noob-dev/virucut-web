@@ -1,0 +1,566 @@
+[
+  {
+    "category": "Fabrication Products",
+    "image": "fabrication-products-small.webp",
+    "id": "fabrication-products",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Cutting Wheels",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Grinding Wheels",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Flap Disc",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Flap Wheels",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Shank Mounted Wheels (MOP)",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Wire Brushes",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "Machining Products",
+    "image": "bta-drills.webp",
+    "id": "machining-products",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Turning",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+        "items": [
+          {
+            "name": "Turning Holders & Inserts",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Scarfing Inserts",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Boring Holder & Inserts",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "ID & OD Grooving Tools",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Eco Drills",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Anti Vibration Boring Tools",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Threading",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          }
+        ]
+      },
+      {
+        "name": "Milling",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+        "subcategories": [
+          {
+            "name": "Indexable Inserts & Cutters",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Face Milling",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Shoulder Milling",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Profile Milling",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          },
+          {
+            "name": "SC Milling Tools",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Flat End Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Ball Nose End Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Corner Radius Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Single lip End Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Rougher End Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Taper End Mill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "SC Special Tools – Customized",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hole Making",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+        "subcategories": [
+          {
+            "name": "SC Drills",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Std Drills TC & NTC",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Special Drills TC & NTC",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          },
+          {
+            "name": "Gun Drills",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Solid Carbide Gun Drills",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Brazed Type Gun Drill",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Insert Type Gun Drills",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "BTA Drills",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          },
+          {
+            "name": "U Drills (SPMG & WCMX)",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Special U Drills",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          },
+          {
+            "name": "Indexable SC Insert Type Drills",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Boring Tools",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+            "items": [
+              {
+                "name": "Rough Boring Bar",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Finish Boring Bar",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              },
+              {
+                "name": "Special Boring Bars – Customized",
+                "image": "fabrication-products-small.webp",
+                "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Threading & Groove Milling",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+        "items": [
+          {
+            "name": "SC Thread Milling Cutter",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Insert Type Thread Milling Cutters",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Taps (HSS & SC)",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Groove Milling Inserts & Cutters",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Spindle Holding Devices",
+    "image": "holding-tools.webp",
+    "id": "spindle-holding-devices",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "ER Type Collet Holder",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Side Lock Holder",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Power Milling Chuck",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Hydro Grip Holder",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Angular Head",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Shrink Fit Holder & Collets",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+        "items": [
+          {
+            "name": "Induction Type",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          },
+          {
+            "name": "Hot Air Type",
+            "image": "fabrication-products-small.webp",
+            "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Work Holding Devices",
+    "image": "bta-drills.webp",
+    "id": "work-holding-devices",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "CNC Chucks",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Soft Jaws (Std and Special)",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Hard Jaws (Std and Special)",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Fixture",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Modular Vice",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Self-Centring Vice",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "De-Burring Tools",
+    "image": "bta-drills.webp",
+    "id": "de-burring-tools",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "End Brush",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Tube Brush",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Wheel Brush",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Flex Hone",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "Fine Polishing Products",
+    "image": "bta-drills.webp",
+    "id": "fine-polishing-products",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Flex Hone",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Non-Woven Products",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Combi Wheel",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Diamond Polishing Tools",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "After Sales & Service",
+    "image": "bta-drills.webp",
+    "id": "after-sales-service",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Hydro Grip Holder",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Hydro Nuts",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Boring Tools",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Anti-Vibration Tools / Silent Tools",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "CNC Chuck (Up to 350 mm)",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Live Tools",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Angular Head",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "CNC Encoders",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "CNC Router Motors",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "BT/HSKA Through External Coolant Holders",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "SC Tools Regrinding & Re-Coating",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "SC Used Insert – Regrinding / Modification",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "Space Saving Solutions",
+    "image": "bta-drills.webp",
+    "id": "space-saving-solutions",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Std and Customized",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "Pneumatic Products",
+    "image": "bta-drills.webp",
+    "id": "pneumatic-products",
+    "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment ",
+    "subcategories": [
+      {
+        "name": "Die Grinders",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Vacuum and Blowers",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Control Units",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Filters",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Sandblasting Gun",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Grinders",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Sanders",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Spray Gun",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Drilling Machine",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      },
+      {
+        "name": "Air Mini Chamfering Tools",
+        "image": "fabrication-products-small.webp",
+        "desc": "Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment  Lorem ipsum some comment  Lorem ipsum some comment  nLorem ipsum some comment "
+      }
+    ]
+  },
+  {
+    "category": "Special Tools",
+    "image": "bta-drills.webp",
+    "id": "special-tools",
+    "desc": "Based on your request"
+  }
+]

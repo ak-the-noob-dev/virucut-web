@@ -24,7 +24,7 @@ export default function ContactUsFormWithMap() {
     e.preventDefault();
     try {
       console.log(JSON.stringify(formData));
-      const res = await fetch("/api/contact-us", {
+      const res = await fetch(process.env.BASE_URL + "/api/contact-us", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export default function ContactUsFormWithMap() {
   return (
     <section
       id="contact-us"
-      className="w-full min-h-[80vh] bg-white flex md:flex-col md:items-center md:justify-center items-center"
+      className="w-full bg-white flex md:flex-col md:items-center md:justify-center items-center"
     >
       <div className="grid md:grid-cols-2 gap-16 items-center relative overflow-hidden p-20 mb-2 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] bg-blue-100 mt-4 font-[sans-serif] before:absolute before:right-0 before:w-[300px] before:bg-blue-400 before:h-full max-md:before:hidden">
         <div>

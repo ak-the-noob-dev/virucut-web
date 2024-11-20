@@ -1,11 +1,33 @@
+"use client";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import ProductsHero from "@/components/Products/products";
 import { ProductsWCategory } from "@/components/ProductView/productView";
-// import ProductSingleView from "@/components/ProductView/productView";
 import Head from "next/head";
+import { useParams } from "next/navigation";
+import { useState } from "react";
+import {} from "@/components/ProductView/productView";
+import { Product } from "@/types/products";
 
 export default function SingleProductView() {
+  const [productData, setsProductData] = useState<Product | null>(null);
+
+  const router = useParams();
+  let id = router.id;
+  if (!id) {
+    id = "fabrication-products";
+  }
+
+  // get product data from api
+  const getProducts = async (id: string) => {
+    const res = await fetch(process.env.BASE_URL + "/api/products/" + id);
+    const data = await res.json();
+    setsProductData(data?.data || {});
+  };
+  if (!productData) {
+    getProducts(id as string);
+  }
+
   return (
     <main>
       <Head>
@@ -15,73 +37,20 @@ export default function SingleProductView() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
-      {/* <ProductSingleView /> */}
-      <ProductsHero
-        imgUrl=""
-        className=""
-      />
-      <section className="min-h-[40vh] bg-white p-12 items-center">
-        
-<h2 className="text-4xl font-extrabold font-verdana dark:text-white">Payments tool for companies</h2>
-<p className="my-4 text-m text-gray-500">Start developing with an open-source library of over 450+ UI components, sections, and pages built with the utility classes from Tailwind CSS and designed in Figma.</p>
-<p className="mb-4 text-m font-normal text-gray-500 dark:text-gray-400">Deliver great service experiences fast - without the complexity of traditional ITSM solutions. Accelerate critical development work, eliminate toil, and deploy changes with ease.</p>
-<a href="#" className="inline-flex items-center text-lg text-blue-600 dark:text-blue-500 hover:underline">
-Read more
-<svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-</svg>
-</a>
 
-      </section>
-      <ProductsWCategory
-        products={[
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC67- for Harden Steel",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC68- for High Temprature Alloy",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-          {
-            name: "HRC68- for High Temprature Alloy",
-            series: "Golden Panda Series",
-            image: "/images/products-1.jpg",
-          },
-        ]}
+      {/* This hero component will cover the name and desc image of the product type*/}
+      <ProductsHero
+        imgUrl={productData?.image ?? ""}
+        className=""
+        name={`${productData?.category}`}
+        desc={`${productData?.desc}`}
       />
+
+      <section className="my-0 bg-gray-100">
+        {/* This component will cover the subcategoreis of the product type*/}
+        <ProductsWCategory subCategories={productData?.subcategories ?? []} />
+      </section>
+
       <Footer />
     </main>
   );

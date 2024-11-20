@@ -27,10 +27,10 @@ export default function MotionBanner() {
       {[...bannerImages, ...bannerImages].map((src, index) => (
         <div
           key={index}
-          className="flex-shrink-0 w-[500px] h-[400px] mx-2 overflow-hidden"
+          className="flex-shrink-0 w-[600px] h-[500px] mx-2 overflow-hidden"
         >
           <Image
-            src={src}
+            src={process.env.BASE_URL + `/api/static/images/${src}`}
             alt={`Banner image ${index + 1}`}
             width={500}
             height={400}

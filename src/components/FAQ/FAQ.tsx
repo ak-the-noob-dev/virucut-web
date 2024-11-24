@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 export default function FAQ() {
   const [data, setData] = useState<{ q: string; ans: string }[] | null>(null);
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const getFAQ = async () => {
     try {
@@ -24,10 +23,6 @@ export default function FAQ() {
     });
   }, []);
 
-  const handleToggle = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
     <section className="p-4 m-4">
       <h2 className="text-center text-black text-3xl font-bold tracking-tighter sm:text-5xl mt-5 mb-10 font-verdana">
@@ -40,8 +35,6 @@ export default function FAQ() {
               <details
                 key={index}
                 className="group py-8 [&_summary::-webkit-details-marker]:hidden"
-                open={openIndex === index}
-                onClick={() => handleToggle(index)}
               >
                 <summary className="flex cursor-pointer items-center justify-between text-gray-900">
                   <h2 className="text-lg font-medium">{faq.q}</h2>

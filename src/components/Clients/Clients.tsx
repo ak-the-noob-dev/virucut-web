@@ -6,53 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import "./clients.css";
 import Home from "@/types/home";
-// export default function Clients() {
-//   return (
-//     <section className="flex flex-col gap-4 p-4 bg-blue-100 items-center min-[40vh] ">
-//       <h6 className="text-3xl font-bold tracking-tighter sm:text-5xl font-verdana">
-//         Our Clients
-//       </h6>
-//       <div className="flex flex-row gap-4">
-//         {[
-//           {
-//             id: "1",
-//             imgUrl: "/images/client-1.png",
-//           },
-//           {
-//             id: "2",
-//             imgUrl: "/images/client-2.png",
-//           },
-//           {
-//             id: "3",
-//             imgUrl: "/images/client-3.png",
-//           },
-//           {
-//             id: "4",
-//             imgUrl: "/images/client-4.png",
-//           },
-//           {
-//             id: "5",
-//             imgUrl: "/images/client-5.png",
-//           },
-//           {
-//             id: "6",
-//             imgUrl: "/images/client-6.png",
-//           },
-//         ].map((client, i) => (
-//           <Image
-//             key={i}
-//             src={client.imgUrl || "/images/default.png"}
-//             alt={`Client ${client.id}`}
-//             width={200}
-//             height={150}
-//             className="grid "
-//           />
-//         ))}
-//       </div>
-//     </section>
-//   );
-// }
-
 export default function Clients({ partners }: { partners: Home["partners"] }) {
   return (
     <section className="p-4 bg-blue-100 items-center min-[40vh] flex flex-col ">
@@ -73,28 +26,6 @@ export default function Clients({ partners }: { partners: Home["partners"] }) {
         ))}
       </div>
     </section>
-
-    // <section className="p-4 bg-blue-100 items-center min-[40vh] ">
-    //   <div className="py-10 text-center ">
-    //     <h2 className="text-2xl font-bold mb-6">Our Clients</h2>
-    //     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-    //       {clients.map((client, index) => (
-    //         <div
-    //           key={index}
-    //           className="p-4 border rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300"
-    //         >
-    //           <Image
-    //             src={client.imgUrl}
-    //             alt={`client ${client.id}`}
-    //             width={150}
-    //             height={100}
-    //             className="object-contain h-20 mx-auto"
-    //           />
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
   );
 }
 
@@ -112,7 +43,7 @@ export function InfiniteScroll({ clients }: { clients: Home["clients"] }) {
             <Image
               src={process.env.BASE_URL + `/api/static/images/${image}`}
               alt={`client ${image}`}
-              className="h-14 w-36 md:w-full object-contain"
+              className="h-28 w-36 md:w-full object-contain"
               width={300}
               height={200}
             />

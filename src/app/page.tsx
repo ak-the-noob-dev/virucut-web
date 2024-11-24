@@ -45,8 +45,8 @@ export default function Home() {
       <section className="my-10 md:my-32 lg:my-32">
         <About />
       </section>
-      <section className="my-10 md:my-32 lg:my-32 bg-blue-200">
-        <div className="text-center text-black text-3xl font-bold tracking-tighter sm:text-5xl py-10 font-verdana">
+      <section className="my-12 md:my-32 lg:my-32 bg-blue-200">
+        <div className="text-center text-black text-3xl font-bold tracking-tighter sm:text-5xl py-5 font-verdana">
           Our Clients
         </div>
         {homeData?.clients && (

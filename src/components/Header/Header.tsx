@@ -141,7 +141,7 @@ const Header: React.FC = () => {
               { name: "Home", href: "/", id: "home" },
               { name: "About", href: "/about-us", id: "about" },
               { name: "Products", href: "#", id: "products" },
-              { name: "Blog", href: "#", id: "blog" },
+              { name: "Blog", href: "/blog", id: "blog" },
               { name: "Careers", href: "/careers", id: "careers" },
               { name: "Contact Us", href: "/contact-us", id: "contact-us" },
             ].map((item) => (
@@ -152,9 +152,11 @@ const Header: React.FC = () => {
                 <Link
                   href={item.href}
                   onClick={() => {
+                    setIsMenuOpen(false);
                     if (item.id === "products") {
                       setshowProducts(true);
-                      setIsMenuOpen(false);
+                    } else {
+                      setshowProducts(false);
                     }
                   }}
                   passHref

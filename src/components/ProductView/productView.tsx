@@ -8,6 +8,7 @@ import {
   ProductSingleViewLimitProps,
   SubCategories,
 } from "@/types/products";
+import ModalWithForm from "../Modal/modalWForm";
 // import HeroButton from "../Buttons/Buttons";
 
 export function ProductSingleViewLimit({
@@ -15,6 +16,7 @@ export function ProductSingleViewLimit({
   reverseImage,
   productName,
 }: ProductSingleViewLimitProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div
       className={`font-sans p-16 tracking-wide max-lg:max-w-2xl mx-auto ${bgColor}`}
@@ -56,7 +58,11 @@ export function ProductSingleViewLimit({
               Download PDF
             </button>
           </div>
-
+          <ModalWithForm
+            id="crud-modal"
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+          />
           <div className="mt-8">
             <h3 className="text-lg font-bold text-gray-800">
               Product Description

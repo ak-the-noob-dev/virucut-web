@@ -185,11 +185,11 @@ export function HeroSlider({ hero }: { hero: Home["hero"] }) {
                   {slide.description}
                 </p>
                 <div className="mt-8 flex gap-4">
-                  <button className="rounded-none bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-white/90">
-                    SEE MORE
+                  <button className="rounded-none bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-green-500 hover:text-white">
+                    GET A QUOTE
                   </button>
-                  <button className="rounded-none border border-white px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-                    SUBSCRIBE
+                  <button className="rounded-none border border-white px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-500 hover:text-white">
+                    DOWNLOAD CATALOG
                   </button>
                 </div>
               </div>

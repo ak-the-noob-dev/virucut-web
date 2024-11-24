@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import ProductsHero from "@/components/Products/products";
+import { HeroSlider } from "@/components/Products/products";
 import { ProductsWCategory } from "@/components/ProductView/productView";
 import Head from "next/head";
 import { useParams } from "next/navigation";
@@ -39,11 +39,11 @@ export default function SingleProductView() {
       <Header />
 
       {/* This hero component will cover the name and desc image of the product type*/}
-      <ProductsHero
+      <HeroSlider
         imgUrl={productData?.image ?? ""}
         className=""
         name={`${productData?.category}`}
-        desc={`${productData?.desc}`}
+        desc={`${productData?.desc?.substring(0, 20)}`}
       />
 
       <section className="my-0 bg-gray-100">

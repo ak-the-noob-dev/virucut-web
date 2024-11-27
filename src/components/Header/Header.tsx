@@ -21,6 +21,12 @@ import "@/styles/header.css";
 import { IoIosPhonePortrait } from "react-icons/io";
 import BannerCard from "../BannerCard/BannerCard";
 
+const getProducts = async () => {
+  const res = await fetch(process.env.BASE_URL + "/api/products");
+  const data = await res.json();
+  return data?.data || [];
+};
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProducts, setshowProducts] = useState(false);
@@ -30,14 +36,10 @@ const Header: React.FC = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const getProducts = async () => {
-    const res = await fetch(process.env.BASE_URL + "/api/products");
-    const data = await res.json();
-    setsProductData(data?.data || []);
-  };
-
   if (productData.length === 0) {
-    getProducts();
+    getProducts()
+      .then((data) => setsProductData(data || []))
+      .catch((err) => console.log(err));
   }
 
   // const handleNavTo = (id: string): void => {

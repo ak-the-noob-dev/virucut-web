@@ -13,22 +13,27 @@ import Clients, {
   InfiniteScroll,
   OurPartners,
 } from "@/components/Clients/Clients";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HomeInterface from "@/types/home";
+
+const getHomeData = async () => {
+  const res = await fetch(process.env.BASE_URL + "/api/home/", {
+    method: "GET",
+  });
+  const ret = await res.json();
+  return ret.data;
+};
 
 export default function Home() {
   const [homeData, setHomeData] = useState<HomeInterface | null>(null);
-  const getHomeData = async () => {
-    const res = await fetch(process.env.BASE_URL + "/api/home/", {
-      method: "GET",
-    });
-    const data = await res.json();
-    setHomeData(data?.data || {});
-  };
 
-  if (!homeData) {
-    getHomeData();
-  }
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getHomeData();
+      setHomeData(data || {});
+    };
+    fetchData();
+  }, []);
 
   return (
     <main>

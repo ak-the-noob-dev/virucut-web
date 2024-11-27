@@ -1,19 +1,19 @@
 "use client";
 import { useEffect, useState } from "react";
 
+const getFAQ = async () => {
+  try {
+    const res = await fetch(process.env.BASE_URL + "/api/faq/");
+    const data = await res.json();
+    // console.log("data on faq:", data);
+    return data?.data || null;
+  } catch (error) {
+    console.log("error on faq:", error);
+    return null;
+  }
+};
 export default function FAQ() {
   const [data, setData] = useState<{ q: string; ans: string }[] | null>(null);
-
-  const getFAQ = async () => {
-    try {
-      const res = await fetch(process.env.BASE_URL + "/api/faq/");
-      const data = await res.json();
-      return data?.data || null;
-    } catch (error) {
-      console.log("error on faq:", error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     getFAQ().then((faqData) => {

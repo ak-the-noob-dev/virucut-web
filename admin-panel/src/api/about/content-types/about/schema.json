@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_title": {
+      "type": "string"
+    },
+    "hero_desc": {
+      "type": "string"
+    },
+    "about_section_text_1": {
+      "type": "text"
+    },
+    "about_section_text_2": {
+      "type": "text"
+    },
+    "about_section_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "our_journey": {
+      "type": "text"
+    },
+    "our_mission": {
+      "type": "text"
+    },
+    "our_vision": {
+      "type": "text"
+    },
+    "our_speciality": {
+      "displayName": "our_speciality",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.our-speciality"
+    }
+  }
+}

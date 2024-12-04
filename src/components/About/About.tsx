@@ -131,7 +131,7 @@ export function AboutUsPage() {
               transition={{ duration: 1 }}
             >
               <p>
-                At{" "}
+                At
                 <span className="font-semibold text-gray-900">
                   VIRUCUT India
                 </span>

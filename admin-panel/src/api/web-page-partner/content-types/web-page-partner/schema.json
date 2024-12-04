@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_page_partners",
+  "info": {
+    "singularName": "web-page-partner",
+    "pluralName": "web-page-partners",
+    "displayName": "web-page-partner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

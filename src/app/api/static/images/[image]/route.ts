@@ -1,10 +1,10 @@
 import { readFile } from "fs/promises";
-import { NextApiRequest } from "next";
+// import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import { join } from "path";
 
 export async function GET(
-  req: NextApiRequest,
+  req: Request,
   { params }: { params: { image: string } }
 ) {
   const image = params.image;

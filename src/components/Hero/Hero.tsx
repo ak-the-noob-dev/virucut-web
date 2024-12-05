@@ -147,7 +147,7 @@ export function HeroSlider({ hero }: { hero: Home["hero"] }) {
   useEffect(() => {
     const interval = setInterval(autoScroll, 4000);
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  });
 
   return (
     <div className="relative h-screen md:h-[95vh] w-full overflow-hidden">

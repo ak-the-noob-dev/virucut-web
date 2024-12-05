@@ -15,6 +15,7 @@ export function ProductSingleViewLimit({
   bgColor,
   reverseImage,
   productName,
+  image,
 }: ProductSingleViewLimitProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -29,9 +30,7 @@ export function ProductSingleViewLimit({
         >
           <div className="bg-gray-100 p-1 flex items-center  w-auto rounded-lg">
             <Image
-              src={
-                process.env.BASE_URL + `/api/static/images/${"products-1.jpg"}`
-              }
+              src={image}
               alt="Product"
               className="w-full max-h-full object-contain object-top"
               width={200}
@@ -139,8 +138,6 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
     }
   }
 
-  // console.log("subWItems", subWItems);
-  // console.log("subWOutItems", subWOutItems);
   return (
     <section className=" w-full bg-blue-100 pt-10">
       <h6 className="text-3xl font-bold tracking-tighter sm:text-5xl font-verdana text-center mb-4 pt-10">
@@ -149,6 +146,10 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
 
       {subWItems &&
         subWItems.map((sub, index) => {
+          // console.log(
+          //   "subWItems",
+          //   process.env.BASE_URL + `/api/static/images/${sub.image ?? ""}`
+          // );
           return (
             <div key={index} className="my-4 gap-8 bg-blue-100">
               <ProductSingleViewLimit
@@ -156,6 +157,9 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
                 bgColor={index % 2 === 0 ? "bg-blue-100" : "bg-white"}
                 reverseImage={index % 2 !== 0}
                 productName={sub.name}
+                image={
+                  process.env.BASE_URL + `/api/static/images/${sub.image ?? ""}`
+                }
               />
               <div className="mb-10">
                 <h6 className="text-xl font-bold tracking-tighter sm:text-3xl font-verdana text-center py-14 bg-white">

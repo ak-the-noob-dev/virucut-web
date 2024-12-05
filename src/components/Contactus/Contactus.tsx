@@ -167,7 +167,7 @@ export default function ContactUsFormWithMap() {
                 />
               </svg>
               <a href="#" className="text-sm ml-4">
-                <strong>+91 9853647892</strong>
+                <strong>{"+91 9385 611 054 / 8870 042 007"}</strong>
               </a>
             </li>
           </ul>

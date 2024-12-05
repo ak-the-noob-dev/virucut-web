@@ -37,22 +37,34 @@
   ],
   "hero": [
     {
-      "title": "some title",
+      "title": "Thread Milling",
       "subtitle": "lorem ipsum some comment",
-      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
-      "image": "hero1.jpg"
+      "description": "Achieve precision threading with our advanced thread milling tools, designed for high accuracy and durability. Perfect for creating internal or external threads across various materials.",
+      "image": "thread-milling.jpeg"
     },
     {
-      "title": "some title",
+      "title": "Hole Making",
       "subtitle": "lorem ipsum some comment",
-      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
-      "image": "hero2.jpg"
+      "description": "Simplify hole creation with our specialized hole-making tools, ensuring clean and accurate results. Ideal for diverse applications in industrial machining.",
+      "image": "hole-making.jpeg"
     },
     {
-      "title": "some title",
+      "title": "Drilling",
       "subtitle": "lorem ipsum some comment",
-      "description": " lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment lorem ipsum some comment",
-      "image": "hero3.jpg"
+      "description": "Experience efficient and precise drilling with our premium drill bits, crafted to reduce wear and maximize performance. Suitable for both metal and non-metal materials.",
+      "image": "drilling.jpeg"
+    },
+    {
+      "title": "SC Tc Burr Cutters",
+      "subtitle": "lorem ipsum some comment",
+      "description": "High-performance SC Tc Burr Cutters for precise material removal and smooth finishes. Ideal for deburring, shaping, and finishing tasks across industries.",
+      "image": "sc-tc-burr-cutters.jpeg"
+    },
+    {
+      "title": "Milling Cutters",
+      "subtitle": "lorem ipsum some comment",
+      "description": "Versatile milling cutters for superior cutting performance and extended tool life. Tailored for high-speed machining and intricate milling operations.",
+      "image": "milling-cutters.jpeg"
     }
   ]
 }

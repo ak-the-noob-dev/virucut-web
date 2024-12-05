@@ -6,7 +6,7 @@ const employees = [
   {
     name: "Vijayakanth V",
     position: "Managing Director",
-    bio: "",
+    bio: "Vijayakanth has more than a decade of experience in the mechanical industry, focusingon cutting tools and inserts An experienced professional with over 8 years in Tool Data Management, Fixture Servicing, and 2.5 years in cutting tools sales and application. He specializes in tooling selection, fixture maintenance, and process optimization. He has a strong track record of reducing costs, improving efficiency, and implementing innovative solutions to meet customer needs.",
     image: "vijayakanth.webp",
     linkedin: "#",
     twitter: "#",
@@ -51,7 +51,9 @@ export default function Employees() {
                     <p className="text-sm text-muted-foreground">
                       {employee.position}
                     </p>
-                    <p className="text-sm">{employee.bio}</p>
+                    <p className="text-sm" style={{ width: "400px" }}>
+                      {employee.bio}
+                    </p>
                     <div className="flex space-x-4 pt-2">
                       <Link
                         href={employee.linkedin}

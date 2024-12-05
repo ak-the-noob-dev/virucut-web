@@ -42,16 +42,6 @@ const Header: React.FC = () => {
       .catch((err) => console.log(err));
   }
 
-  // const handleNavTo = (id: string): void => {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     window.scrollTo({
-  //       top: element.offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
   return (
     <header className="font-sans tracking-wide relative z-50">
       <section className="text-white py-2 bg-prussian_blue ">
@@ -68,14 +58,14 @@ const Header: React.FC = () => {
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
             />
-            chennai, India.
+            Chennai, India.
           </span>
           <span className="lg:pl-7 flex flex-wrap items-center gap-2 mt-2 md:mt-0 lg:mt-0">
             <IoIosPhonePortrait
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
             />
-            {" +91 9385 611 054"}
+            {"+91 9385 611 054 / 8870 042 007"}
           </span>
         </p>
       </section>
@@ -144,7 +134,7 @@ const Header: React.FC = () => {
               { name: "About", href: "/about-us", id: "about" },
               { name: "Products", href: "#", id: "products" },
               // { name: "Blog", href: "/blog", id: "blog" },
-              // { name: "Careers", href: "/careers", id: "careers" },
+              { name: "Careers", href: "/careers", id: "careers" },
               { name: "Contact Us", href: "/contact-us", id: "contact-us" },
             ].map((item) => (
               <li
@@ -172,7 +162,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex max-lg:ml-auto">
+        <div className="flex items-center max-lg:ml-auto space-x-4">
           {/* Open Menu Button */}
           <button
             id="toggleOpen"
@@ -186,13 +176,25 @@ const Header: React.FC = () => {
               <IoMenuOutline className="w-7 h-7" color="hsl(119, 85%, 37%)" />
             )}
           </button>
+
+          {/* VRV Logo */}
+          <div>
+            <Image
+              src={
+                process.env.BASE_URL + `/api/static/images/${"vrv-logo.jpeg"}`
+              }
+              alt="vrv logo"
+              width={144}
+              height={60}
+              className="w-16"
+            />
+          </div>
         </div>
       </div>
       {showProducts ? (
         <div className="absolute m-auto md:right-20 lg:right-20 right-0 sm:top-1/2 md:top-full">
           <span className="block md:hidden lg:hidden text-2xl font-verdana text-center bg-gray-200 p-2">
-            {" "}
-            Our Products{" "}
+            Our Products
           </span>
           <BannerCard
             onClickOutside={() => setshowProducts(false)}

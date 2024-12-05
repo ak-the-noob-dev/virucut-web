@@ -38,7 +38,6 @@ export default function ModalWithForm({
       });
 
       if (response.ok) {
-        alert("Product created successfully!");
         setFormData({
           name: "",
           company: "",
@@ -48,7 +47,7 @@ export default function ModalWithForm({
         });
         onClose();
       } else {
-        alert("Failed to create product");
+        alert("Failed to send contact form");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -100,7 +99,7 @@ export default function ModalWithForm({
               </label>
               <input
                 type="text"
-                name="name"
+                name="company"
                 value={formData.company}
                 onChange={handleInputChange}
                 className="w-full p-2 rounded-lg border"
@@ -122,11 +121,11 @@ export default function ModalWithForm({
             </div>
             <div className="col-span-2">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                Email
+                Phone
               </label>
               <input
                 type="text"
-                name="number"
+                name="phone"
                 value={formData.phone}
                 onChange={handleInputChange}
                 className="w-full p-2 rounded-lg border"
@@ -138,7 +137,7 @@ export default function ModalWithForm({
                 Product Description
               </label>
               <textarea
-                name="description"
+                name="message"
                 rows={5}
                 value={formData.message}
                 onChange={handleInputChange}
@@ -151,7 +150,7 @@ export default function ModalWithForm({
             className="w-full text-white bg-blue-700 hover:bg-blue-800 p-2 rounded-lg mt-2"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Add New Product"}
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>

@@ -43,7 +43,7 @@ export default function SingleProductView() {
         imgUrl={productData?.image ?? ""}
         className=""
         name={`${productData?.category}`}
-        desc={`${productData?.desc?.substring(0, 20)}`}
+        desc={`${productData?.desc}`}
       />
 
       <section className="my-0 bg-gray-100">

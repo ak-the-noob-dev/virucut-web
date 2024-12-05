@@ -20,17 +20,18 @@ export default function AboutUs() {
             We&apos;re Hiring!
           </h1>
           <p className="text-lg text-center text-gray-700 mb-4">
-            ViruCut is growing, and we are excited to announce multiple openings
-            across various positions. If you are passionate, skilled, and ready
-            to take on new challenges, we want to hear from you!
+            <strong>VIRUCUT India Private Limited</strong> is growing, and we
+            are excited to announce multiple openings across various positions.
+            If you are passionate, skilled, and ready to take on new challenges,
+            we want to hear from you!
           </p>
           <p className="text-lg text-center text-gray-700">
             Please send your resume to:{" "}
             <a
-              href="mailto:Vijay@virucut.in"
+              href="mailto:inquiry@virucut.in"
               className="text-blue-600 underline hover:text-blue-800"
             >
-              Vijay@virucut.in
+              inquiry@virucut.in
             </a>
           </p>
         </div>

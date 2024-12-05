@@ -303,7 +303,7 @@ export default function Footer() {
         </ul>
 
         <p className="text-black text-sm md:ml-auto">
-          © VIRUCUT India Private Limited All rights reserved.
+          © VIRUCUT India Private Limited, All rights reserved.
         </p>
       </div>
     </footer>

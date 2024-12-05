@@ -1,38 +1,38 @@
 [
   {
     "category": "Fabrication Products",
-    "image": "fabrication-products-small.webp",
+    "image": "fabrication-products.jpeg",
     "id": "fabrication-products",
     "desc": "The act of creating an early model or version of a product to test concepts and gather feedback. Fabrication is the process of constructing or manufacturing a product from raw materials through various methods, including cutting, bending, welding, and assembling.",
     "subcategories": [
       {
         "name": "Cutting Wheels",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       },
       {
         "name": "Grinding Wheels",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       },
       {
         "name": "Flap Disc",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       },
       {
         "name": "Flap Wheels",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       },
       {
         "name": "Shank Mounted Wheels (MOP)",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       },
       {
         "name": "Wire Brushes",
-        "image": "fabrication-products-small.webp",
+        "image": "fabrication-products.jpeg",
         "desc": ""
       }
     ]
@@ -92,64 +92,64 @@
         "subcategories": [
           {
             "name": "Indexable Inserts & Cutters",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": "",
             "items": [
               {
                 "name": "Face Milling",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Shoulder Milling",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Profile Milling",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]
           },
           {
             "name": "SC Milling Tools",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": "",
             "items": [
               {
                 "name": "Flat End Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Ball Nose End Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Corner Radius Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Single lip End Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Rougher End Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Taper End Mill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "SC Special Tools – Customized",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]
@@ -167,78 +167,78 @@
             "items": [
               {
                 "name": "Std Drills TC & NTC",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Special Drills TC & NTC",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]
           },
           {
             "name": "Gun Drills",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": "",
             "items": [
               {
                 "name": "Solid Carbide Gun Drills",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Brazed Type Gun Drill",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Insert Type Gun Drills",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "BTA Drills",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]
           },
           {
             "name": "U Drills (SPMG & WCMX)",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": "",
             "items": [
               {
                 "name": "Special U Drills",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]
           },
           {
             "name": "Indexable SC Insert Type Drills",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": ""
           },
           {
             "name": "Boring Tools",
-            "image": "fabrication-products-small.webp",
+            "image": "fabrication-products.jpeg",
             "desc": "",
             "items": [
               {
                 "name": "Rough Boring Bar",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Finish Boring Bar",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               },
               {
                 "name": "Special Boring Bars – Customized",
-                "image": "fabrication-products-small.webp",
+                "image": "fabrication-products.jpeg",
                 "desc": ""
               }
             ]

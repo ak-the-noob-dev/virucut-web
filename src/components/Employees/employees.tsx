@@ -11,14 +11,14 @@ const employees = [
     linkedin: "#",
     twitter: "#",
   },
-  {
-    name: "Janakiram V",
-    position: "Product Development Manager",
-    bio: "",
-    image: "janikiraman.webp",
-    linkedin: "#",
-    twitter: "#",
-  },
+  // {
+  //   name: "Janakiram V",
+  //   position: "Product Development Manager",
+  //   bio: "",
+  //   image: "janikiraman.webp",
+  //   linkedin: "#",
+  //   twitter: "#",
+  // },
 ];
 
 export default function Employees() {

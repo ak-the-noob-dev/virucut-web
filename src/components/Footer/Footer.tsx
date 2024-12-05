@@ -1,8 +1,10 @@
 import Image from "next/image";
 import {
+  IoChatbox,
   IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoTwitter,
+  IoLogoWhatsapp,
 } from "react-icons/io5";
 import Link from "next/link";
 
@@ -93,18 +95,15 @@ export default function Footer() {
           </h4>
           <ul className="space-y-5 mt-6 max-sm:hidden">
             <li>
-              <a
-                href="/products"
-                className="hover:text-main_green text-black text-sm"
-              >
-                Product 1
+              <a href="/" className="hover:text-main_green text-black text-sm">
+                All products
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Product 2
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -135,26 +134,26 @@ export default function Footer() {
                 About us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Careers
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Blog
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Portfolio
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Events
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -250,6 +249,33 @@ export default function Footer() {
                   color="hsl(119, 85%, 37%)"
                 />
               </Link>
+            </li>
+            <li>
+              <Link
+                href={"https://whatsapp.com/channel/0029Va9aJc3EKyZPtSoukJ0e"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <IoLogoWhatsapp
+                  style={{ fontSize: 25 }}
+                  color="hsl(119, 85%, 37%)"
+                />
+              </Link>
+            </li>
+
+            <li>
+              <div className="tooltip" data-tip="Telegram">
+                <Link
+                  href={"https://t.me/virucut"}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <IoChatbox
+                    style={{ fontSize: 25 }}
+                    color="hsl(119, 85%, 37%)"
+                  />
+                </Link>
+              </div>
             </li>
           </ul>
         </div>

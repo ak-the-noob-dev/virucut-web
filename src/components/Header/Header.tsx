@@ -143,8 +143,8 @@ const Header: React.FC = () => {
               { name: "Home", href: "/", id: "home" },
               { name: "About", href: "/about-us", id: "about" },
               { name: "Products", href: "#", id: "products" },
-              { name: "Blog", href: "/blog", id: "blog" },
-              { name: "Careers", href: "/careers", id: "careers" },
+              // { name: "Blog", href: "/blog", id: "blog" },
+              // { name: "Careers", href: "/careers", id: "careers" },
               { name: "Contact Us", href: "/contact-us", id: "contact-us" },
             ].map((item) => (
               <li

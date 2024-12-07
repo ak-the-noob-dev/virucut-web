@@ -71,7 +71,7 @@ const Header: React.FC = () => {
       </section>
 
       {/* Main Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[100px] shadow">
+      <div className="flex flex-wrap items-center justify-between gap-4  px-5 md:px-10 lg:px-10 py-4 bg-white min-h-[100px] shadow">
         {/* Logo */}
         <Link href="/" passHref>
           <Image
@@ -82,7 +82,13 @@ const Header: React.FC = () => {
             className="w-36"
           />
         </Link>
-
+        <Image
+          src={process.env.BASE_URL + `/api/static/images/${"vrv-logo.jpeg"}`}
+          alt="vrv logo"
+          width={144}
+          height={60}
+          className="w-16 block md:hidden lg:hidden"
+        />
         {/* Navigation Menu */}
         <div
           id="collapseMenu"
@@ -108,6 +114,20 @@ const Header: React.FC = () => {
                   height={60}
                   className="w-32 md:mx-auto md:w-36 lg:w-36 h-auto"
                 />
+                {isMenuOpen ? (
+                  <Image
+                    src={
+                      process.env.BASE_URL +
+                      `/api/static/images/${"vrv-logo.jpeg"}`
+                    }
+                    alt="vrv logo"
+                    width={144}
+                    height={60}
+                    className="w-16 h-14 mt-3 ml-3"
+                  />
+                ) : (
+                  <></>
+                )}
                 <div className="flex max-lg:ml-auto">
                   {/* Open Menu Button */}
                   <button
@@ -178,7 +198,8 @@ const Header: React.FC = () => {
           </button>
 
           {/* VRV Logo */}
-          <div>
+
+          <div className="hidden lg:block md:block">
             <Image
               src={
                 process.env.BASE_URL + `/api/static/images/${"vrv-logo.jpeg"}`

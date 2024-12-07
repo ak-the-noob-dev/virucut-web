@@ -9,7 +9,7 @@ export default function About() {
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
           <div className="relative h-[500px] md:h-[600px]">
-            <div className="absolute bottom-0 left-0 w-4/5 h-4/5 bg-white p-4 shadow-xl rounded-lg">
+            <div className="absolute bottom-0 left-0 w-[100%] md:w-4/5 lg:w-4/5 h-4/5 bg-white p-4 shadow-xl rounded-lg">
               <Image
                 alt="About Us Image 1"
                 className="rounded object-cover w-full h-full"
@@ -21,7 +21,7 @@ export default function About() {
                 width="450"
               />
             </div>
-            <div className="absolute top-10 left-[40%] w-1/2 h-1/2 bg-white p-2 shadow-xl rounded-lg -rotate-3">
+            <div className="absolute top-10 left-[40%] md:w-1/2 lg:w-1/2 md:h-1/2 lg:h-1/2 w-[60%] h-[60%] bg-white p-2 shadow-xl rounded-lg -rotate-3">
               <Image
                 alt="About Us Image 3"
                 className="rounded object-cover w-full h-full"

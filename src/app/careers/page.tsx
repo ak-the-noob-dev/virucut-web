@@ -19,7 +19,7 @@ export default function AboutUs() {
           <h1 className="text-4xl font-bold text-center mb-6">
             We&apos;re Hiring!
           </h1>
-          <p className="text-lg text-center text-gray-700 mb-4">
+          <p className="text-lg text-center text-gray-700 mb-4 md:flex lg:flex md:flex-col lg:flex-col md:w-[50rem] lg:w-[50rem]">
             <strong>VIRUCUT India Private Limited</strong> is growing, and we
             are excited to announce multiple openings across various positions.
             If you are passionate, skilled, and ready to take on new challenges,

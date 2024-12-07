@@ -1,7 +1,7 @@
 .scroller-container {
   display: flex;
   gap: 4px;
-  animation: scroll 30s linear infinite; /* Increase duration for smoother scroll */
+  animation: scroll 40s linear infinite;
 }
 
 @keyframes scroll {
@@ -9,8 +9,6 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      -33.33%
-    ); /* Adjust based on how much you want to scroll */
+    transform: translateX(-33.33%);
   }
 }

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { CardWithBackImage } from "../DataCard/DataCard";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Product,
   ProductSingleViewLimitProps,
@@ -83,16 +83,31 @@ export function ProductSingleViewLimit({
 }
 
 export function OurProducts() {
-  const [productData, setsProductData] = useState<Product[] | []>([]);
-  const getProducts = async () => {
-    const res = await fetch(process.env.BASE_URL + "/api/products");
-    const data = await res.json();
-    setsProductData(data?.data || []);
-  };
+  const defaultScroll = 50; // Initial scroll position
+  const [productData, setProductData] = useState<Product[]>([]); // Store fetched product data
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Ref for the scrollable container
 
-  if (productData.length === 0) {
+  // Fetch products on component mount
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await fetch(`${process.env.BASE_URL}/api/products`);
+        const data = await res.json();
+        setProductData(data?.data || []);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
     getProducts();
-  }
+  }, []); // Runs once when the component mounts
+
+  // Set default scroll position after products are loaded
+  useEffect(() => {
+    if (scrollContainerRef.current && productData.length > 0) {
+      scrollContainerRef.current.scrollLeft = defaultScroll;
+    }
+  }, [productData]); // Runs when productData changes
 
   return (
     <section
@@ -104,26 +119,27 @@ export function OurProducts() {
       </div>
       {/* Outer container with a fixed height and horizontal scrolling */}
       <div className="relative w-full">
-        <div className="flex overflow-x-auto gap-4 mt-4 mb-6 w-full pb-4 scrollbar scrollbar-track-gray-200 scrollbar-thumb-gray-800">
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto gap-4 mt-4 mb-6 w-full pb-4 scrollbar scrollbar-track-gray-200 scrollbar-thumb-gray-800"
+        >
           {/* Flex container for the scrollable cards */}
           <div className="flex flex-nowrap gap-0 md:gap-5">
-            {productData &&
-              productData.map((product, i) => (
-                <CardWithBackImage
-                  href={`/products/${product.id}`}
-                  key={i}
-                  cardKey={i}
-                  imagePath={`/images/${product.image}`}
-                  productName={product.category}
-                />
-              ))}
+            {productData.map((product, i) => (
+              <CardWithBackImage
+                href={`/products/${product.id}`}
+                key={i}
+                cardKey={i}
+                imagePath={`/images/${product.image}`}
+                productName={product.category}
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
 // simplified
 
 export function ProductsWCategory({ subCategories }: SubCategories) {

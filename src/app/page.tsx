@@ -1,8 +1,7 @@
 "use client";
 import Head from "next/head";
 import Header from "@/components/Header/Header";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import Hero, { HeroSlider } from "@/components/Hero/Hero";
+import HeroSlider from "@/components/Hero/Hero";
 import About from "@/components/About/About";
 import Footer from "@/components/Footer/Footer";
 import ContactUsFormWithMap from "@/components/Contactus/Contactus";

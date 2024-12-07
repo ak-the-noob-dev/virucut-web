@@ -66,13 +66,16 @@ export default function Footer() {
           <h4 className="text-black font-semibold text-lg relative max-sm:cursor-pointer pb-4">
             Address{" "}
           </h4>
-          <p className="text-black text-sm pb-2">
-            <strong>Registered Office:</strong> SF No: 309/1A1, 1st Floor,
-            Kalyani Nagar, Madura Avenue, Near St. Joseph’s College, Kovur,
-            Chennai 600128, Tamil Nadu, India
-          </p>
+          <div className="text-black text-sm pb-2">
+            <strong>Registered Office:</strong>
+            <p>
+              SF No: 309/1A1, 1st Floor, Kalyani Nagar, Madura Avenue, Near St.
+              Joseph’s College, Kovur
+            </p>
+            <p>Chennai 600128, Tamil Nadu, India</p>
+          </div>
           <p className="text-black text-sm">
-            <strong>Branch Office:</strong> 27/3 , Thirukumaran Nagar-1 ,
+            <strong>Residential Office:</strong> 27/3,Thirukumaran Nagar-1 ,
             Vilankurichi, Coimbatore-600128, Tamil Nadu, India
           </p>
         </div>

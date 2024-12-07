@@ -73,7 +73,7 @@ export function OurPartners({ partners }: { partners: Home["partners"] }) {
     }, 7000);
 
     return () => clearInterval(interval);
-  }, [partners]); // Include partners here
+  }, [partners]); // Include partners here`
 
   return (
     <section className="bg-background py-16 bg-blue-100">

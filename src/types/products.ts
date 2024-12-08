@@ -2,6 +2,7 @@ export interface ProductSingleViewLimitProps {
   bgColor: string;
   reverseImage: boolean;
   productName: string;
+  image: string;
 }
 
 export interface Product {

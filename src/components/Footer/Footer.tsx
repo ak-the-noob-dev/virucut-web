@@ -1,8 +1,10 @@
 import Image from "next/image";
 import {
+  IoChatbox,
   IoLogoInstagram,
   IoLogoLinkedin,
   IoLogoTwitter,
+  IoLogoWhatsapp,
 } from "react-icons/io5";
 import Link from "next/link";
 
@@ -64,13 +66,16 @@ export default function Footer() {
           <h4 className="text-black font-semibold text-lg relative max-sm:cursor-pointer pb-4">
             Address{" "}
           </h4>
-          <p className="text-black text-sm pb-2">
-            <strong>Registered Office:</strong> SF No: 309/1A1, 1st Floor,
-            Kalyani Nagar, Madura Avenue, Near St. Joseph’s College, Kovur,
-            Chennai 600128, Tamil Nadu, India
-          </p>
+          <div className="text-black text-sm pb-2">
+            <strong>Registered Office:</strong>
+            <p>
+              SF No: 309/1A1, 1st Floor, Kalyani Nagar, Madura Avenue, Near St.
+              Joseph’s College, Kovur
+            </p>
+            <p>Chennai 600128, Tamil Nadu, India</p>
+          </div>
           <p className="text-black text-sm">
-            <strong>Branch Office:</strong> 27/3 , Thirukumaran Nagar-1 ,
+            <strong>Residential Office:</strong> 27/3,Thirukumaran Nagar-1 ,
             Vilankurichi, Coimbatore-600128, Tamil Nadu, India
           </p>
         </div>
@@ -93,18 +98,15 @@ export default function Footer() {
           </h4>
           <ul className="space-y-5 mt-6 max-sm:hidden">
             <li>
-              <a
-                href="/products"
-                className="hover:text-main_green text-black text-sm"
-              >
-                Product 1
+              <a href="/" className="hover:text-main_green text-black text-sm">
+                All products
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Product 2
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -135,26 +137,26 @@ export default function Footer() {
                 About us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Careers
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Blog
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Portfolio
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="/" className="hover:text-main_green text-black text-sm">
                 Events
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
@@ -251,6 +253,33 @@ export default function Footer() {
                 />
               </Link>
             </li>
+            <li>
+              <Link
+                href={"https://whatsapp.com/channel/0029Va9aJc3EKyZPtSoukJ0e"}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <IoLogoWhatsapp
+                  style={{ fontSize: 25 }}
+                  color="hsl(119, 85%, 37%)"
+                />
+              </Link>
+            </li>
+
+            <li>
+              <div className="tooltip" data-tip="Telegram">
+                <Link
+                  href={"https://t.me/virucut"}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <IoChatbox
+                    style={{ fontSize: 25 }}
+                    color="hsl(119, 85%, 37%)"
+                  />
+                </Link>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -277,7 +306,7 @@ export default function Footer() {
         </ul>
 
         <p className="text-black text-sm md:ml-auto">
-          © VIRUCUT. All rights reserved.
+          © VIRUCUT India Private Limited, All rights reserved.
         </p>
       </div>
     </footer>

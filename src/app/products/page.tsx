@@ -278,6 +278,7 @@ export default function ProductView() {
                   bgColor={index % 2 === 0 ? "bg-blue-100" : "bg-white"}
                   reverseImage={index % 2 !== 0}
                   productName={product}
+                  image=""
                 />
               ))}
             </div>

@@ -77,15 +77,13 @@ export function HeroSlider({
             height={800}
           />
           <div className="absolute inset-0 flex flex-col justify-center px-8 sm:px-16 font-verdana">
-            <h1 className="text-3xl font-bold text-white sm:text-6xl md:text-7xl">
+            {/* <h1 className="text-3xl font-bold text-white sm:text-6xl md:text-7xl">
               {name}
-            </h1>
+            </h1> */}
             <h2 className="mt-4 text-4xl font-bold text-green-500 sm:text-7xl md:text-8xl">
-              {desc}
+              {name}
             </h2>
-            {/* <p className="mt-4 max-w-md text-lg text-white/90">
-              {slide.description}
-            </p> */}
+            <p className="mt-4 max-w-md text-lg text-white/90">{desc}</p>
             <div className="mt-8 flex gap-4">
               <button
                 className="rounded-none bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-green-500 hover:text-white"

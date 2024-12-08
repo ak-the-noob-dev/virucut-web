@@ -42,16 +42,6 @@ const Header: React.FC = () => {
       .catch((err) => console.log(err));
   }
 
-  // const handleNavTo = (id: string): void => {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     window.scrollTo({
-  //       top: element.offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
   return (
     <header className="font-sans tracking-wide relative z-50">
       <section className="text-white py-2 bg-prussian_blue ">
@@ -68,20 +58,20 @@ const Header: React.FC = () => {
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
             />
-            chennai, India.
+            Chennai, India.
           </span>
           <span className="lg:pl-7 flex flex-wrap items-center gap-2 mt-2 md:mt-0 lg:mt-0">
             <IoIosPhonePortrait
               style={{ fontSize: 18 }}
               color="hsl(119, 85%, 37%)"
             />
-            {" +91 9385 611 054"}
+            {"+91 9385 611 054 / 8870 042 007"}
           </span>
         </p>
       </section>
 
       {/* Main Header */}
-      <div className="flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[100px] shadow">
+      <div className="flex flex-wrap items-center justify-between gap-4  px-5 md:px-10 lg:px-10 py-4 bg-white min-h-[100px] shadow">
         {/* Logo */}
         <Link href="/" passHref>
           <Image
@@ -92,7 +82,13 @@ const Header: React.FC = () => {
             className="w-36"
           />
         </Link>
-
+        <Image
+          src={process.env.BASE_URL + `/api/static/images/${"vrv-logo.jpeg"}`}
+          alt="vrv logo"
+          width={144}
+          height={60}
+          className="w-16 block md:hidden lg:hidden"
+        />
         {/* Navigation Menu */}
         <div
           id="collapseMenu"
@@ -118,6 +114,20 @@ const Header: React.FC = () => {
                   height={60}
                   className="w-32 md:mx-auto md:w-36 lg:w-36 h-auto"
                 />
+                {isMenuOpen ? (
+                  <Image
+                    src={
+                      process.env.BASE_URL +
+                      `/api/static/images/${"vrv-logo.jpeg"}`
+                    }
+                    alt="vrv logo"
+                    width={144}
+                    height={60}
+                    className="w-16 h-14 mt-3 ml-3"
+                  />
+                ) : (
+                  <></>
+                )}
                 <div className="flex max-lg:ml-auto">
                   {/* Open Menu Button */}
                   <button
@@ -143,7 +153,7 @@ const Header: React.FC = () => {
               { name: "Home", href: "/", id: "home" },
               { name: "About", href: "/about-us", id: "about" },
               { name: "Products", href: "#", id: "products" },
-              { name: "Blog", href: "/blog", id: "blog" },
+              // { name: "Blog", href: "/blog", id: "blog" },
               { name: "Careers", href: "/careers", id: "careers" },
               { name: "Contact Us", href: "/contact-us", id: "contact-us" },
             ].map((item) => (
@@ -172,7 +182,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex max-lg:ml-auto">
+        <div className="flex items-center max-lg:ml-auto space-x-4">
           {/* Open Menu Button */}
           <button
             id="toggleOpen"
@@ -186,13 +196,26 @@ const Header: React.FC = () => {
               <IoMenuOutline className="w-7 h-7" color="hsl(119, 85%, 37%)" />
             )}
           </button>
+
+          {/* VRV Logo */}
+
+          <div className="hidden lg:block md:block">
+            <Image
+              src={
+                process.env.BASE_URL + `/api/static/images/${"vrv-logo.jpeg"}`
+              }
+              alt="vrv logo"
+              width={144}
+              height={60}
+              className="w-16"
+            />
+          </div>
         </div>
       </div>
       {showProducts ? (
         <div className="absolute m-auto md:right-20 lg:right-20 right-0 sm:top-1/2 md:top-full">
           <span className="block md:hidden lg:hidden text-2xl font-verdana text-center bg-gray-200 p-2">
-            {" "}
-            Our Products{" "}
+            Our Products
           </span>
           <BannerCard
             onClickOutside={() => setshowProducts(false)}

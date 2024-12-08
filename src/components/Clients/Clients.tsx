@@ -60,22 +60,20 @@ export function OurPartners({ partners }: { partners: Home["partners"] }) {
   const [visiblePartners, setVisiblePartners] = useState<
     Home["partners"] | null
   >(null);
-  if (!visiblePartners) {
-    setVisiblePartners(partners);
-  }
 
-  // console.log("partners", partners);
   useEffect(() => {
+    setVisiblePartners(partners);
+
     const interval = setInterval(() => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      setVisiblePartners((_prevPartners: unknown) => {
+      setVisiblePartners((_prevPartners) => {
         const shuffled = [...partners].sort(() => Math.random() - 0.5);
         return shuffled.slice(0, Math.floor(Math.random() * 2) + 7);
       });
     }, 7000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [partners]); // Include partners here`
 
   return (
     <section className="bg-background py-16 bg-blue-100">
@@ -101,9 +99,7 @@ export function OurPartners({ partners }: { partners: Home["partners"] }) {
                   <Card className="overflow-hidden h-full transition-shadow duration-300 hover:shadow-lg bg-white">
                     <CardContent className="p-6 flex items-center justify-center h-32">
                       <Image
-                        src={
-                          process.env.BASE_URL + `/api/static/images/${partner}`
-                        }
+                        src={`${process.env.BASE_URL}/api/static/images/${partner}`}
                         alt={`${partner} logo`}
                         className="max-w-full max-h-full object-contain"
                         width={300}

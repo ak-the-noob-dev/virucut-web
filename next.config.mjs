@@ -6,7 +6,7 @@ const nextConfig = {
     API_URL: process.env.API_URL,
   },
   images: {
-    domains: ["127.0.0.1"],
+    domains: ["127.0.0.1", "virucut.in", "192.168.93.81"],
   },
 };
 

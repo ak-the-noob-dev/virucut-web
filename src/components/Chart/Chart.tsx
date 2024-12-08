@@ -1,8 +1,9 @@
 // components/DynamicHierarchyChart.js
+import { Hierarchy } from "@/types/home";
 import Image from "next/image";
 import React from "react";
 
-const DynamicHierarchyChart = ({ hierarchy }) => {
+const DynamicHierarchyChart = ({ hierarchy }: { hierarchy: Hierarchy }) => {
   const { ceo, managers, employees } = hierarchy;
 
   return (

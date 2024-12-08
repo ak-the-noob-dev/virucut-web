@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { CardWithBackImage } from "../DataCard/DataCard";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Product,
   ProductSingleViewLimitProps,
@@ -15,6 +15,7 @@ export function ProductSingleViewLimit({
   bgColor,
   reverseImage,
   productName,
+  image,
 }: ProductSingleViewLimitProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -29,9 +30,7 @@ export function ProductSingleViewLimit({
         >
           <div className="bg-gray-100 p-1 flex items-center  w-auto rounded-lg">
             <Image
-              src={
-                process.env.BASE_URL + `/api/static/images/${"products-1.jpg"}`
-              }
+              src={image}
               alt="Product"
               className="w-full max-h-full object-contain object-top"
               width={200}
@@ -84,16 +83,31 @@ export function ProductSingleViewLimit({
 }
 
 export function OurProducts() {
-  const [productData, setsProductData] = useState<Product[] | []>([]);
-  const getProducts = async () => {
-    const res = await fetch(process.env.BASE_URL + "/api/products");
-    const data = await res.json();
-    setsProductData(data?.data || []);
-  };
+  const defaultScroll = 50; // Initial scroll position
+  const [productData, setProductData] = useState<Product[]>([]); // Store fetched product data
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Ref for the scrollable container
 
-  if (productData.length === 0) {
+  // Fetch products on component mount
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await fetch(`${process.env.BASE_URL}/api/products`);
+        const data = await res.json();
+        setProductData(data?.data || []);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+      }
+    };
+
     getProducts();
-  }
+  }, []); // Runs once when the component mounts
+
+  // Set default scroll position after products are loaded
+  useEffect(() => {
+    if (scrollContainerRef.current && productData.length > 0) {
+      scrollContainerRef.current.scrollLeft = defaultScroll;
+    }
+  }, [productData]); // Runs when productData changes
 
   return (
     <section
@@ -105,26 +119,27 @@ export function OurProducts() {
       </div>
       {/* Outer container with a fixed height and horizontal scrolling */}
       <div className="relative w-full">
-        <div className="flex overflow-x-auto gap-4 mt-4 mb-6 w-full pb-4 scrollbar scrollbar-track-gray-200 scrollbar-thumb-gray-800">
+        <div
+          ref={scrollContainerRef}
+          className="flex overflow-x-auto gap-4 mt-4 mb-6 w-full pb-4 scrollbar scrollbar-track-gray-200 scrollbar-thumb-gray-800"
+        >
           {/* Flex container for the scrollable cards */}
           <div className="flex flex-nowrap gap-0 md:gap-5">
-            {productData &&
-              productData.map((product, i) => (
-                <CardWithBackImage
-                  href={`/products/${product.id}`}
-                  key={i}
-                  cardKey={i}
-                  imagePath={`/images/${product.image}`}
-                  productName={product.category}
-                />
-              ))}
+            {productData.map((product, i) => (
+              <CardWithBackImage
+                href={`/products/${product.id}`}
+                key={i}
+                cardKey={i}
+                imagePath={`/images/${product.image}`}
+                productName={product.category}
+              />
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
 }
-
 // simplified
 
 export function ProductsWCategory({ subCategories }: SubCategories) {
@@ -139,8 +154,6 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
     }
   }
 
-  // console.log("subWItems", subWItems);
-  // console.log("subWOutItems", subWOutItems);
   return (
     <section className=" w-full bg-blue-100 pt-10">
       <h6 className="text-3xl font-bold tracking-tighter sm:text-5xl font-verdana text-center mb-4 pt-10">
@@ -149,6 +162,10 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
 
       {subWItems &&
         subWItems.map((sub, index) => {
+          // console.log(
+          //   "subWItems",
+          //   process.env.BASE_URL + `/api/static/images/${sub.image ?? ""}`
+          // );
           return (
             <div key={index} className="my-4 gap-8 bg-blue-100">
               <ProductSingleViewLimit
@@ -156,6 +173,9 @@ export function ProductsWCategory({ subCategories }: SubCategories) {
                 bgColor={index % 2 === 0 ? "bg-blue-100" : "bg-white"}
                 reverseImage={index % 2 !== 0}
                 productName={sub.name}
+                image={
+                  process.env.BASE_URL + `/api/static/images/${sub.image ?? ""}`
+                }
               />
               <div className="mb-10">
                 <h6 className="text-xl font-bold tracking-tighter sm:text-3xl font-verdana text-center py-14 bg-white">

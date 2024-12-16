@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Card, CardContent } from "../DataCard/DataCard";
 import Link from "next/link";
 import { IoLogoLinkedin } from "react-icons/io5";
+import { getImageUrl } from "@/lib/utils";
+import EmployeeProps from "@/types/employee";
 const employees = [
   {
     name: "Vijayakanth V",
@@ -71,5 +73,52 @@ export default function Employees() {
         </div>
       </section>
     </div>
+  );
+}
+
+export function Md({ data }: { data: EmployeeProps }) {
+  const uri: string =
+    getImageUrl(data?.image?.url || "") || "/images/vijayakanth.webp";
+  return (
+    <section className=" bg-gray-50">
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center p-16 font-verdana">
+        Meet Our Team
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4 lg:gap-6 px-5 md:px-32 pb-10">
+        <div className="w-full h-auto justify-center items-center flex">
+          <Image
+            src={uri}
+            alt={data.name || "Vijayakanth V"}
+            width={400}
+            height={400}
+            className="w-full max-w-96 h-auto object-cover rounded-lg"
+          />
+        </div>
+        <div className="flex flex-col gap-3 font-verdana">
+          <h3 className="font-bold text-2xl">{data.name || "Vijayakanth V"}</h3>
+          <p className="text-xs font-bold md:text-sm text-muted-foreground">
+            {data.role || "Managing Director"}
+          </p>
+          {data.employee_desc && data.employee_desc.length > 0 && (
+            <>
+              {data.employee_desc.map((e, i) => {
+                if (i === 0) {
+                  return (
+                    <p key={i} className="text-sm font-verdana mt-5 md:mt-8">
+                      {e.desc}
+                    </p>
+                  );
+                }
+                return (
+                  <p key={i} className="text-sm font-verdana">
+                    {e.desc}
+                  </p>
+                );
+              })}
+            </>
+          )}
+        </div>
+      </div>
+    </section>
   );
 }

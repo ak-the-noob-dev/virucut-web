@@ -39,6 +39,29 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.hero"
+    },
+    "about_content": {
+      "type": "text"
+    },
+    "about_image_1": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "about_image_2": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

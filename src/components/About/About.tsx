@@ -2,8 +2,11 @@
 import Image from "next/image";
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { motion } from "framer-motion";
+import AboutUsProps from "@/types/about";
+import { getImageUrl } from "@/lib/utils";
+import Home from "@/types/home";
 
-export default function About() {
+export default function About({ aboutUs }: { aboutUs: Home }) {
   return (
     <section className="w-full min-h-[80vh] bg-white flex md:flex-col md:items-center md:justify-center items-center pb-10">
       <div className="container px-4 md:px-6">
@@ -14,10 +17,7 @@ export default function About() {
                 alt="About Us Image 1"
                 className="rounded object-cover w-full h-full"
                 height="560"
-                src={
-                  process.env.BASE_URL +
-                  `/api/static/images/${"aboutus-banner-1.jpg"}`
-                }
+                src={getImageUrl(aboutUs?.about_image_1.url) || ""}
                 width="450"
               />
             </div>
@@ -26,10 +26,7 @@ export default function About() {
                 alt="About Us Image 3"
                 className="rounded object-cover w-full h-full"
                 height="300"
-                src={
-                  process.env.BASE_URL +
-                  `/api/static/images/${"aboutus-banner-2.jpg"}`
-                }
+                src={getImageUrl(aboutUs?.about_image_2?.url) || ""}
                 width="250"
               />
             </div>
@@ -40,11 +37,17 @@ export default function About() {
                 About us
               </h2>
               <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                At VIRUCUT India, we are driven by a commitment to quality,
-                precision, and innovation. We provide tailored solutions in
-                industrial tooling, designed to enhance productivity and
-                performance across industries. With a focus on excellence, we
-                are your trusted partner in success.
+                {aboutUs?.about_content ? (
+                  aboutUs?.about_content
+                ) : (
+                  <>
+                    At VIRUCUT India, we are driven by a commitment to quality,
+                    precision, and innovation. We provide tailored solutions in
+                    industrial tooling, designed to enhance productivity and
+                    performance across industries. With a focus on excellence,
+                    we are your trusted partner in success.
+                  </>
+                )}
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4 pt-4">
@@ -76,20 +79,10 @@ export default function About() {
   );
 }
 
-export function AboutUsPage() {
-  // const handleNavTo = (id: string): void => {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     window.scrollTo({
-  //       top: element.offsetTop,
-  //       behavior: "smooth",
-  //     });
-  //   }
-  // };
-
+export function AboutUsPage({ data }: { data: AboutUsProps }) {
   return (
     <>
-      <section className="relative bg-gradient-to-b from-blue-500 to-indigo-900 text-white py-48 font-verdana">
+      <section className="relative bg-gradient-to-b from-blue-500 to-indigo-900 text-white py-48  font-verdana">
         <div className="container mx-auto px-6 text-center">
           <motion.h1
             className="text-6xl font-extrabold"
@@ -97,7 +90,7 @@ export function AboutUsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            Your Productive Partner
+            {data.hero_title || "Your Productive Partner"}
           </motion.h1>
           <motion.p
             className="mt-4 text-xl max-w-2xl mx-auto"
@@ -105,8 +98,8 @@ export function AboutUsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            Delivering precision-engineered tools and innovative solutions to
-            drive your business forward.
+            {data.hero_desc ||
+              "Delivering precision-engineered tools and innovative solutions to drive your business forward."}
           </motion.p>
         </div>
       </section>
@@ -131,17 +124,27 @@ export function AboutUsPage() {
               transition={{ duration: 1 }}
             >
               <p>
-                At
-                <span className="font-semibold text-gray-900">
-                  VIRUCUT India
-                </span>
-                , we focus on providing tailored industrial solutions through
-                precision, quality, and innovation.
+                {data.about_section_text_1 || (
+                  <>
+                    At{" "}
+                    <span className="font-semibold text-gray-900">
+                      VIRUCUT India Private Limited
+                    </span>
+                    , we focus on providing tailored industrial solutions
+                    through precision, quality, and innovation.
+                  </>
+                )}
               </p>
+
               <p>
-                Our tools and systems are crafted to enhance productivity,
-                making us a trusted partner across industries. We are dedicated
-                to bringing the best engineering solutions to the table.
+                {data.about_section_text_2 || (
+                  <>
+                    Our tools and systems are crafted to enhance productivity,
+                    making us a trusted partner across industries. We are
+                    dedicated to bringing the best engineering solutions to the
+                    table.
+                  </>
+                )}
               </p>
             </motion.div>
             <motion.div
@@ -153,8 +156,14 @@ export function AboutUsPage() {
               <Image
                 width={500}
                 height={500}
-                src={process.env.BASE_URL + `/api/static/images/${"hero3.jpg"}`}
-                alt="Industrial Tools and Solutions"
+                src={
+                  getImageUrl(data.about_section_image?.url || "") ||
+                  process.env.BASE_URL + `/api/static/images/hero3.jpg`
+                }
+                alt={
+                  data.about_section_image?.name ||
+                  "Industrial Tools and Solutions"
+                }
                 className="w-full h-64 object-cover"
               />
             </motion.div>
@@ -180,10 +189,14 @@ export function AboutUsPage() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            Established in 2018, VIRUCUT India Private Limited has rapidly
-            evolved into a leader in industrial tooling solutions, offering
-            innovative products that improve productivity and performance across
-            various sectors.
+            {data.our_journey || (
+              <>
+                Established in 2018, VIRUCUT India Private Limited has rapidly
+                evolved into a leader in industrial tooling solutions, offering
+                innovative products that improve productivity and performance
+                across various sectors.
+              </>
+            )}
           </motion.p>
         </div>
       </section>
@@ -199,11 +212,11 @@ export function AboutUsPage() {
               transition={{ duration: 0.8 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                Quality
+                {data.our_speciality?.[0]?.title || "Quality"}
               </h4>
               <p className="text-gray-600">
-                We ensure excellence in every solution we provide, from
-                precision tools to complete system designs.
+                {data.our_speciality?.[0]?.content ||
+                  "We ensure excellence in every solution we provide, from precision tools to complete system designs."}
               </p>
             </motion.div>
 
@@ -214,11 +227,11 @@ export function AboutUsPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                Innovation
+                {data.our_speciality?.[2]?.title || "Innovation"}
               </h4>
               <p className="text-gray-600">
-                We embrace cutting-edge technologies to deliver innovative
-                solutions that meet the unique needs of our clients.
+                {data.our_speciality?.[2]?.content ||
+                  "We embrace cutting-edge technologies to deliver innovative solutions that meet the unique needs of our clients."}
               </p>
             </motion.div>
 
@@ -229,11 +242,11 @@ export function AboutUsPage() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                Precision
+                {data.our_speciality?.[1]?.title || "Precision"}
               </h4>
               <p className="text-gray-600">
-                Our commitment to precision ensures that every product and
-                solution is designed to perfection.
+                {data.our_speciality?.[1]?.content ||
+                  "Our commitment to precision ensures that every product andsolution is designed to perfection."}
               </p>
             </motion.div>
           </div>
@@ -257,9 +270,13 @@ export function AboutUsPage() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            To deliver comprehensive, cutting-edge industrial solutions that
-            foster our customers&apos; growth and ensure the highest level of
-            product excellence.
+            {data.our_mission || (
+              <>
+                To deliver comprehensive, cutting-edge industrial solutions that
+                foster our customers&apos; growth and ensure the highest level
+                of product excellence.
+              </>
+            )}
           </motion.p>
 
           <motion.h3
@@ -276,13 +293,16 @@ export function AboutUsPage() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            To broaden our brand presence across industries, empowering
-            businesses of all sizes to thrive with innovative, reliable
-            solutions.
+            {data.our_vision || (
+              <>
+                To broaden our brand presence across industries, empowering
+                businesses of all sizes to thrive with innovative, reliable
+                solutions.
+              </>
+            )}
           </motion.p>
         </div>
       </section>
-      {/* Employee Profiles */}
     </>
   );
 }

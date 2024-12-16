@@ -3,8 +3,8 @@ import nodemailer from "nodemailer";
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "mnestest3000@gmail.com",
-    pass: "aoftqcepribbcwwp",
+    user: "vibaneshram@gmail.com",
+    pass: "fbworavorcpvaohv",
   },
 });
 
@@ -23,6 +23,6 @@ export function sendEmail(props: EmailProps) {
       html: props.html,
     });
   } catch (error: unknown) {
-    console.log(error);
+    console.log("error", error);
   }
 }

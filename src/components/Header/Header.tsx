@@ -8,7 +8,7 @@
  */
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -20,27 +20,55 @@ import {
 import "@/styles/header.css";
 import { IoIosPhonePortrait } from "react-icons/io";
 import BannerCard from "../BannerCard/BannerCard";
+import { makeApiCall } from "@/lib/utils";
+import urls from "@/constant/url";
+import { ProductsList } from "@/types/products";
+import { sendGTMEvent } from "@next/third-parties/google";
 
-const getProducts = async () => {
-  const res = await fetch(process.env.BASE_URL + "/api/products");
-  const data = await res.json();
-  return data?.data || [];
+// const getProducts = async () => {
+//   const res = await fetch(process.env.BASE_URL + "/api/products");
+//   const data = await res.json();
+//   return data?.data || [];
+// };
+
+const getProductsFromStrapi = async () => {
+  try {
+    const res = await makeApiCall({
+      url: `${process.env.API_URL}${urls.productsList}`,
+      method: "GET",
+    });
+    if (!res) {
+      return;
+    }
+    return await res.data;
+  } catch (error: unknown) {
+    console.error("Failed to fetch home data:", error);
+  }
 };
+
+const sendEventAnalytics = (event: string, value: string) =>
+  sendGTMEvent({ event, value });
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showProducts, setshowProducts] = useState(false);
-  const [productData, setsProductData] = useState([]);
+  const [productData, setsProductData] = useState<ProductsList[]>([]);
 
   const handleToggleMenu = (): void => {
     setIsMenuOpen((prev) => !prev);
   };
 
   if (productData.length === 0) {
-    getProducts()
+    // getProducts()
+    //   .then((data) => setsProductData(data || []))
+    //   .catch((err) => console.log(err));
+  }
+
+  useEffect(() => {
+    getProductsFromStrapi()
       .then((data) => setsProductData(data || []))
       .catch((err) => console.log(err));
-  }
+  }, []);
 
   return (
     <header className="font-sans tracking-wide relative z-50">
@@ -166,8 +194,11 @@ const Header: React.FC = () => {
                   onClick={() => {
                     setIsMenuOpen(false);
                     if (item.id === "products") {
+                      sendEventAnalytics("product_clicked", "header");
                       setshowProducts(true);
                     } else {
+                      sendEventAnalytics("page_clicked", item.id);
+
                       setshowProducts(false);
                     }
                   }}

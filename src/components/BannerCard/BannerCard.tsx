@@ -1,4 +1,7 @@
 "use client";
+import { getImageUrl } from "@/lib/utils";
+import { ProductsList } from "@/types/products";
+import { sendGTMEvent } from "@next/third-parties/google";
 import Image from "next/image";
 import Link from "next/link";
 import { RefObject, useEffect, useRef } from "react";
@@ -27,12 +30,10 @@ export const useClickOutside = (
 
 interface BannerCardProps {
   onClickOutside: () => void;
-  productData: {
-    image: string;
-    category: string;
-    id: string;
-  }[];
+  productData: ProductsList[];
 }
+const sendEventAnalytics = (event: string, value: string) =>
+  sendGTMEvent({ event, value });
 
 export default function BannerCard({
   onClickOutside,
@@ -47,7 +48,14 @@ export default function BannerCard({
       className="h-[50vh] overflow-y-scroll md:h-auto p-4 mx-auto max-w-7xl bg-gray-200 shadow-md rounded-lg flex md:flex-row lg:flex-row flex-wrap gap-4 justify-center w-auto"
     >
       {productData.map((item) => (
-        <Link key={item.id} href={`/products/${item.id}`} className="group">
+        <Link
+          key={item.categoryId}
+          href={`/products/${item.categoryId}`}
+          className="group"
+          onClick={() => {
+            sendEventAnalytics("Product_click", item.categoryId);
+          }}
+        >
           {/* <div className="w-[100px] h-[120px] sm:w-[140px] sm:h-[160px] lg:w-[160px] lg:h-[180px] flex flex-col items-center justify-start gap-2 overflow-hidden text-center text-black transition-transform duration-300 group-hover:scale-105 bg-gray-50 rounded-lg shadow-sm">
             <Image
               src={`/images/${item.image}`}
@@ -62,8 +70,8 @@ export default function BannerCard({
           </div> */}
 
           <SmallCard
-            imageSrc={process.env.BASE_URL + `/api/static/images/${item.image}`}
-            text={item.category}
+            imageSrc={getImageUrl(item.image.url || "") || ""}
+            text={item.categoryName}
           />
         </Link>
       ))}

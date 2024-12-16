@@ -1,28 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
-
-const getFAQ = async () => {
-  try {
-    const res = await fetch(process.env.BASE_URL + "/api/faq/");
-    const data = await res.json();
-    // console.log("data on faq:", data);
-    return data?.data || null;
-  } catch (error) {
-    console.log("error on faq:", error);
-    return null;
-  }
-};
-export default function FAQ() {
-  const [data, setData] = useState<{ q: string; ans: string }[] | null>(null);
-
-  useEffect(() => {
-    getFAQ().then((faqData) => {
-      if (faqData) {
-        setData(faqData);
-      }
-    });
-  }, []);
-
+import { FAQProps } from "@/types/home";
+export default function FAQ({ data }: { data: FAQProps[] }) {
   return (
     <section className="p-4 m-4">
       <h2 className="text-center text-black text-3xl font-bold tracking-tighter sm:text-5xl mt-5 mb-10 font-verdana">

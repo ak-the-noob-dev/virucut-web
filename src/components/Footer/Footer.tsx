@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     // <section className="bg-white min-h-[80vh] flex flex-col justify-center items-center">
-    <footer className="font-sans tracking-wide bg-white px-8 py-6 ">
+    <footer className="font-sans tracking-wide bg-white px-8 py-6 border-t border-gray-200">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-6 gap-y-10">
         <div>
           <a href="/">
@@ -75,8 +75,8 @@ export default function Footer() {
             <p>Chennai 600128, Tamil Nadu, India</p>
           </div>
           <p className="text-black text-sm">
-            <strong>Residential Office:</strong> 27/3,Thirukumaran Nagar-1 ,
-            Vilankurichi, Coimbatore-600128, Tamil Nadu, India
+            <strong>Residential Office:</strong> 27/3, Thirukumaran Nagar -1,
+            Vilankurichi, Coimbatore - 641035
           </p>
         </div>
         <div>

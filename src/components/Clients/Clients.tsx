@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import "./clients.css";
 import Home from "@/types/home";
+import { getImageUrl } from "@/lib/utils";
 export default function Clients({ partners }: { partners: Home["partners"] }) {
   return (
     <section className="p-4 bg-blue-100 items-center min-[40vh] flex flex-col ">
@@ -30,25 +31,36 @@ export default function Clients({ partners }: { partners: Home["partners"] }) {
 }
 
 export function InfiniteScroll({ clients }: { clients: Home["clients"] }) {
-  const extendedClients = [...clients, ...clients, ...clients]; // Extend list for smoother scroll
+  const extendedClients = [...clients, ...clients];
 
   return (
     <div className="relative w-full overflow-hidden py-4 md:py-12">
-      <div className="scroller-container animate-scroll flex gap-4">
-        {extendedClients.map((image, index) => (
-          <div
-            key={index}
-            className="relative h-24 w-auto flex-shrink-0 overflow-hidden rounded-lg transition-all hover:scale-105"
-          >
-            <Image
-              src={process.env.BASE_URL + `/api/static/images/${image}`}
-              alt={`client ${image}`}
-              className="h-28 w-36 md:w-full object-contain"
-              width={300}
-              height={200}
-            />
-          </div>
-        ))}
+      <div className="gap-4 md:gap-8 scroller-container flex ">
+        <motion.div
+          className="flex gap-8 w-max"
+          initial={{ x: 0 }}
+          animate={{ x: "-50%" }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 20,
+          }}
+        >
+          {extendedClients.map((client, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[120px] md:w-[180px] lg:w-[200px]"
+            >
+              <Image
+                src={getImageUrl(client.url ?? "") || ""}
+                alt={`Client ${index + 1}`}
+                className="w-[600px] h-auto object-contain"
+                width={300}
+                height={200}
+              />
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
@@ -99,8 +111,8 @@ export function OurPartners({ partners }: { partners: Home["partners"] }) {
                   <Card className="overflow-hidden h-full transition-shadow duration-300 hover:shadow-lg bg-white">
                     <CardContent className="p-6 flex items-center justify-center h-32">
                       <Image
-                        src={`${process.env.BASE_URL}/api/static/images/${partner}`}
-                        alt={`${partner} logo`}
+                        src={getImageUrl(partner.url) || ""}
+                        alt={`${partner.name} logo`}
                         className="max-w-full max-h-full object-contain"
                         width={300}
                         height={300}
@@ -110,6 +122,31 @@ export function OurPartners({ partners }: { partners: Home["partners"] }) {
                 </motion.div>
               ))}
           </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function PartnerLogoGrid({ clients }: { clients: Home["clients"] }) {
+  return (
+    <section className="bg-blue-200 py-12 md:py-20">
+      <div className="container mx-auto px-4">
+        <h1 className="text-3xl tracking-tighter sm:text-5xl font-verdana text-center font-bold mb-4">
+          Some of our valuable clients
+        </h1>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-5">
+          {clients.map((partner, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <Image
+                src={getImageUrl(partner.url) || ""}
+                alt={`${partner.alternativeText || partner.name} logo`}
+                width={150}
+                height={50}
+                className="w-auto object-contain h-16 md:h-36 lg:h-28"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

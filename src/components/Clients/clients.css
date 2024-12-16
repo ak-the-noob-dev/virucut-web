@@ -1,7 +1,5 @@
 .scroller-container {
-  display: flex;
-  gap: 4px;
-  animation: scroll 40s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 
 @keyframes scroll {

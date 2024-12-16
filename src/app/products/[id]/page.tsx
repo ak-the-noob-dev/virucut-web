@@ -5,28 +5,54 @@ import { HeroSlider } from "@/components/Products/products";
 import { ProductsWCategory } from "@/components/ProductView/productView";
 import Head from "next/head";
 import { useParams } from "next/navigation";
-import { useState } from "react";
-import {} from "@/components/ProductView/productView";
+import { useEffect, useState } from "react";
+// import {} from "@/components/ProductView/productView";
 import { Product } from "@/types/products";
+import urls from "@/constant/url";
+import { getImageUrl, makeApiCall } from "@/lib/utils";
+
+// get product data from api
+const getProducts = async (id: string) => {
+  try {
+    const res = await makeApiCall({
+      url: `${process.env.API_URL}${urls.products(id)}`,
+      method: "GET",
+    });
+    if (!res) {
+      return null;
+    }
+    return await res.data;
+  } catch (error: unknown) {
+    console.error("Failed to fetch home data:", error);
+    return null;
+  }
+};
 
 export default function SingleProductView() {
   const [productData, setsProductData] = useState<Product | null>(null);
 
   const router = useParams();
-  let id = router.id;
-  if (!id) {
-    id = "fabrication-products";
-  }
+  const id = router.id;
 
-  // get product data from api
-  const getProducts = async (id: string) => {
-    const res = await fetch(process.env.BASE_URL + "/api/products/" + id);
-    const data = await res.json();
-    setsProductData(data?.data || {});
-  };
-  if (!productData) {
-    getProducts(id as string);
-  }
+  useEffect(() => {
+    if (id) {
+      const fetchProduct = async () => {
+        if (typeof id === "string") {
+          const product = await getProducts(id);
+          if (product.length === 0) {
+            return window.location.replace("/404");
+          }
+          return setsProductData(product?.[0]);
+        }
+        const product = await getProducts(id.toString());
+        if (product.length === 0) {
+          return window.location.replace("/404");
+        }
+        setsProductData(product?.[0]);
+      };
+      fetchProduct();
+    }
+  }, [id]);
 
   return (
     <main>
@@ -40,10 +66,10 @@ export default function SingleProductView() {
 
       {/* This hero component will cover the name and desc image of the product type*/}
       <HeroSlider
-        imgUrl={productData?.image ?? ""}
+        imgUrl={getImageUrl(productData?.image?.url || "") || ""}
         className=""
-        name={`${productData?.category}`}
-        desc={`${productData?.desc}`}
+        name={`${productData?.categoryName || "Product"}`}
+        desc={`${productData?.desc || "awesome products to check out"}`}
       />
 
       <section className="my-0 bg-gray-100">

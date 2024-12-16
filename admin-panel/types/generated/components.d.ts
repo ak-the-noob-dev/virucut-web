@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedEmployeeDesc extends Struct.ComponentSchema {
+  collectionName: 'components_shared_employee_descs';
+  info: {
+    displayName: 'employee_desc';
+    icon: 'user';
+  };
+  attributes: {
+    desc: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedHero extends Struct.ComponentSchema {
   collectionName: 'components_shared_heroes';
   info: {
@@ -121,6 +132,7 @@ export interface SharedSubcategories extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.employee-desc': SharedEmployeeDesc;
       'shared.hero': SharedHero;
       'shared.items': SharedItems;
       'shared.media': SharedMedia;

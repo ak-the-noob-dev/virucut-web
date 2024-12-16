@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getImageUrl } from "@/lib/utils";
 import Image from "next/image";
 import Home from "@/types/home";
 
@@ -58,7 +58,7 @@ export default function HeroSlider({ hero }: { hero: Home["hero"] }) {
             <div className="relative h-full w-full">
               <div className="absolute inset-0 bg-black/30" />
               <Image
-                src={process.env.BASE_URL + `/api/static/images/${slide.image}`}
+                src={getImageUrl(slide?.image?.url ?? "") || ""}
                 alt={slide.subtitle ?? ""}
                 className="h-full w-full object-cover"
                 width={1600}
@@ -114,7 +114,7 @@ export default function HeroSlider({ hero }: { hero: Home["hero"] }) {
             className="group relative h-24 w-32 overflow-hidden rounded-lg"
           >
             <Image
-              src={process.env.BASE_URL + `/api/static/images/${slide.image}`}
+              src={getImageUrl(slide?.image?.url ?? "") || ""}
               alt={slide.subtitle ?? ""}
               className="h-full w-full object-cover"
               width={1600}

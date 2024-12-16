@@ -60,7 +60,7 @@ export function HeroSlider({
   desc,
 }: ProductsHeroInterface) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [isEnquiry, setIsEnquiry] = useState(false);
   return (
     <div
       className={`relative h-screen md:h-[95vh] w-full overflow-hidden ${className}`}
@@ -70,7 +70,7 @@ export function HeroSlider({
         <div className="relative h-full w-full">
           <div className="absolute inset-0 bg-black/40" />
           <Image
-            src={process.env.BASE_URL + `/api/static/images/${imgUrl}`}
+            src={imgUrl ?? ""}
             alt={name ?? ""}
             className="h-full w-full object-cover"
             width={1600}
@@ -87,13 +87,19 @@ export function HeroSlider({
             <div className="mt-8 flex gap-4">
               <button
                 className="rounded-none bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-green-500 hover:text-white"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setIsEnquiry(true);
+                }}
               >
                 GET A QUOTE
               </button>
               <button
                 className="rounded-none border border-white px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-green-500 hover:text-white"
-                onClick={() => setIsModalOpen(true)}
+                onClick={() => {
+                  setIsModalOpen(true);
+                  setIsEnquiry(false);
+                }}
               >
                 DOWNLOAD CATALOG
               </button>
@@ -104,6 +110,7 @@ export function HeroSlider({
               <ModalWithForm
                 id="crud-modal"
                 isOpen={isModalOpen}
+                isEnquiry={isEnquiry}
                 onClose={() => setIsModalOpen(false)}
               />
             </div>

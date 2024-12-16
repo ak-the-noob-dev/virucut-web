@@ -4,7 +4,14 @@ import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import ContactUsFormWithMap from "@/components/Contactus/Contactus";
 import { AboutUsPage } from "@/components/About/About";
-import Employees from "@/components/Employees/employees";
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Employees, { Md } from "@/components/Employees/employees";
+import { makeApiCall } from "@/lib/utils";
+import urls from "@/constant/url";
+import { useEffect, useState } from "react";
+import AboutUsProps from "@/types/about";
+import EmployeeProps from "@/types/employee";
 /**
  * AboutUs component is the main component for the About Us page.
  * It renders a Hero section, an About Us section and a Contact Us Form with Map.
@@ -13,6 +20,46 @@ import Employees from "@/components/Employees/employees";
  * The Contact Us Form with Map section has a contact form and a map.
  */
 export default function AboutUs() {
+  const [apiData, setApiData] = useState<AboutUsProps | null>(null);
+  const [empData, setEmpData] = useState<EmployeeProps | null>(null);
+  const getAboutUsData = async () => {
+    try {
+      const res = await makeApiCall({
+        url: `${process.env.API_URL}${urls.aboutUs}`,
+        method: "GET",
+      });
+      if (!res) {
+        return;
+      }
+      const data = await res.data;
+      console.log("data on faq:", data);
+      setApiData(data);
+    } catch (error: unknown) {
+      console.error("Failed to fetch about us data:", error);
+    }
+  };
+
+  const getEmployees = async () => {
+    try {
+      const res = await makeApiCall({
+        url: `${process.env.API_URL}${urls.employees}`,
+        method: "GET",
+      });
+      if (!res) {
+        return;
+      }
+      const data = await res.data;
+      console.log("data on faq:", data);
+      setEmpData(data);
+    } catch (error: unknown) {
+      console.error("Failed to fetch about us data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getAboutUsData();
+    getEmployees();
+  }, []);
   return (
     <main>
       <Head>
@@ -22,8 +69,9 @@ export default function AboutUs() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />
-      <AboutUsPage />
-      <Employees />
+      {apiData && <AboutUsPage data={apiData} />}
+      {/* <Employees /> */}
+      {empData && <Md data={empData} />}
       <ContactUsFormWithMap />
       <Footer />
     </main>

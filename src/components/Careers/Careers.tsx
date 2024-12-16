@@ -13,70 +13,27 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ChevronLeft, ChevronRight, Search } from "lucide-react";
-
-interface Job {
-  id: string;
-  title: string;
-  department: string;
-  location: string;
-  type: string;
-  description: string;
-}
-
-const jobsData: Job[] = [
-  {
-    id: "1",
-    title: "Frontend Developer",
-    department: "Engineering",
-    location: "Remote",
-    type: "Full-time",
-    description:
-      "We&apos;re looking for a talented frontend developer to join our team and create amazing user experiences.",
-  },
-  {
-    id: "2",
-    title: "Backend Engineer",
-    department: "Engineering",
-    location: "New York, NY",
-    type: "Full-time",
-    description:
-      "Join our backend team to build scalable and efficient systems that power our applications.",
-  },
-  {
-    id: "3",
-    title: "UX Designer",
-    department: "Design",
-    location: "San Francisco, CA",
-    type: "Full-time",
-    description:
-      "Help us create beautiful and intuitive user experiences that delight our customers.",
-  },
-  {
-    id: "4",
-    title: "Product Manager",
-    department: "Product",
-    location: "London, UK",
-    type: "Full-time",
-    description:
-      "Drive the vision and strategy for our product line, working closely with all teams.",
-  },
-  {
-    id: "5",
-    title: "Data Scientist",
-    department: "Data",
-    location: "Remote",
-    type: "Full-time",
-    description:
-      "Apply machine learning and statistical models to solve complex problems and drive insights.",
-  },
-];
+import { makeApiCall } from "@/lib/utils";
+import urls from "@/constant/url";
+import Job from "@/types/careers";
 
 async function getJobs(
   page: number = 1,
   pageSize: number = 4
 ): Promise<{ jobs: Job[]; total: number }> {
-  // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  let jobsData: Job[] = [];
+  try {
+    const res = await makeApiCall({
+      url: `${process.env.API_URL}${urls.careers}`,
+      method: "GET",
+    });
+    if (!res) {
+      return { jobs: [], total: 0 };
+    }
+    jobsData = await res.data;
+  } catch (error: unknown) {
+    console.error("Failed to fetch faq data:", error);
+  }
 
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
@@ -117,89 +74,101 @@ export default function CareersPage() {
   const totalPages = Math.ceil(totalJobs / pageSize);
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
-          <p className="text-xl mb-8 max-w-2xl">
-            We&apos;re on a mission to change the world. If you&apos;re
-            passionate, innovative, and ready for a challenge, we want you on
-            our team.
-          </p>
-          <Button size="lg" variant="secondary">
-            Learn More About Us
-          </Button>
+    <>
+      {jobs && jobs.length > 0 ? (
+        <div className="min-h-screen bg-blue-100 font-verdana">
+          {/* Hero Section */}
+          <section className="bg-primary text-primary-foreground py-20">
+            <div className="container mx-auto px-4 flex flex-col justify-center items-center">
+              <h1 className="text-5xl font-bold mb-6">Join Our Team</h1>
+              <p className="text-xl mb-8 max-w-2xl">
+                We&apos;re on a mission to change the world. If you&apos;re
+                passionate, innovative, and ready for a challenge, we want you
+                on our team.
+              </p>
+              <Button size="lg" variant="secondary">
+                Learn More About Us
+              </Button>
+            </div>
+          </section>
+
+          {/* Job Listings Section */}
+          <section className="py-16">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-bold mb-8">Open Positions</h2>
+
+              {/* Search Bar */}
+              <div className="mb-8 relative">
+                <Input
+                  type="text"
+                  placeholder="Search jobs..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10"
+                />
+                <Search
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground"
+                  size={20}
+                />
+              </div>
+
+              {/* Job Listings */}
+              <div className="grid gap-6 mb-8">
+                {loading
+                  ? Array.from({ length: pageSize }).map((_, index) => (
+                      <JobSkeleton key={index} />
+                    ))
+                  : filteredJobs.map((job) => (
+                      <JobCard key={job.id} job={job} />
+                    ))}
+              </div>
+
+              {/* Pagination */}
+              <div className="flex justify-between items-center">
+                <Button
+                  onClick={() => setPage((p) => Math.max(1, p - 1))}
+                  disabled={page === 1 || loading}
+                  variant="outline"
+                >
+                  <ChevronLeft className="mr-2 h-4 w-4" /> Previous
+                </Button>
+                <span className="text-sm text-muted-foreground">
+                  Page {page} of {totalPages}
+                </span>
+                <Button
+                  onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={page === totalPages || loading}
+                  variant="outline"
+                >
+                  Next <ChevronRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Call to Action Section */}
+          <section className="bg-muted py-16">
+            <div className="container mx-auto px-4 text-center">
+              <h2 className="text-3xl font-bold mb-4">
+                Don&apos;t See the Right Fit?
+              </h2>
+              <p className="text-xl mb-8 p-8">
+                We&apos;re always looking for talented individuals to join our
+                team. Send us your resume, and we&apos;ll keep you in mind for
+                future opportunities.
+              </p>
+              <a href="mailto:inquiry@virucut.in">
+                <Button size="lg" className="hover:text-blue-800">
+                  Click here to send your resume to: inquiry@virucut.in
+                </Button>
+              </a>
+            </div>
+          </section>
         </div>
-      </section>
-
-      {/* Job Listings Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Open Positions</h2>
-
-          {/* Search Bar */}
-          <div className="mb-8 relative">
-            <Input
-              type="text"
-              placeholder="Search jobs..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
-            />
-            <Search
-              className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground"
-              size={20}
-            />
-          </div>
-
-          {/* Job Listings */}
-          <div className="grid gap-6 mb-8">
-            {loading
-              ? Array.from({ length: pageSize }).map((_, index) => (
-                  <JobSkeleton key={index} />
-                ))
-              : filteredJobs.map((job) => <JobCard key={job.id} job={job} />)}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex justify-between items-center">
-            <Button
-              onClick={() => setPage((p) => Math.max(1, p - 1))}
-              disabled={page === 1 || loading}
-              variant="outline"
-            >
-              <ChevronLeft className="mr-2 h-4 w-4" /> Previous
-            </Button>
-            <span className="text-sm text-muted-foreground">
-              Page {page} of {totalPages}
-            </span>
-            <Button
-              onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-              disabled={page === totalPages || loading}
-              variant="outline"
-            >
-              Next <ChevronRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="bg-muted py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Don&apos;t See the Right Fit?
-          </h2>
-          <p className="text-xl mb-8">
-            We&apos;re always looking for talented individuals to join our team.
-            Send us your resume, and we&apos;ll keep you in mind for future
-            opportunities.
-          </p>
-          <Button size="lg">Submit Your Resume</Button>
-        </div>
-      </section>
-    </div>
+      ) : (
+        <MailForJob />
+      )}
+    </>
   );
 }
 
@@ -243,7 +212,12 @@ function JobCard({ job }: { job: Job }) {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Apply Now</Button>
+        <a
+          href="mailto:inquiry@virucut.in"
+          className="w-full text-blue-800 bg-blue-200 border-2 border-blue-500 rounded-lg hover:bg-blue-400 hover:text-white"
+        >
+          <Button className="w-full">Apply now</Button>
+        </a>
       </CardFooter>
     </Card>
   );
@@ -271,5 +245,32 @@ function JobSkeleton() {
         <Skeleton className="h-10 w-full" />
       </CardFooter>
     </Card>
+  );
+}
+
+function MailForJob() {
+  return (
+    <section className="py-12 bg-gray-100 min-h-[60vh] flex items-center font-verdana">
+      <div className="container mx-auto px-4 flex flex-col items-center">
+        <h1 className="text-4xl font-bold text-center mb-6">
+          We&apos;re Hiring!
+        </h1>
+        <p className="text-lg text-center text-gray-700 mb-4 md:w-[50rem] lg:w-[50rem]">
+          <strong>VIRUCUT India Private Limited</strong> is growing, and we are
+          excited to announce multiple openings across various positions. If you
+          are passionate, skilled, and ready to take on new challenges, we want
+          to hear from you!
+        </p>
+        <p className="text-lg text-center text-gray-700">
+          Please send your resume to:{" "}
+          <a
+            href="mailto:inquiry@virucut.in"
+            className="text-blue-600 underline hover:text-blue-800"
+          >
+            inquiry@virucut.in
+          </a>
+        </p>
+      </div>
+    </section>
   );
 }

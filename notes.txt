@@ -45,3 +45,11 @@ Contents for
 3. Testimonials or Customer Success story or awards or blogs or case study - contents and Images
 4. Images for Website
 5. Your Mission and Vision
+
+
+npm run strapi import -- -f /path/to/my/file/export_20221213105643.tar.gz.enc --key virucut
+npm run strapi import -- -f /prod --force --key virucut
+
+
+cp -r ./virucut-web/admin-panel/src/api ./virucut-admin/src/api
+cp -r ./virucut-web/admin-panel/src/components ./virucut-admin/src/components

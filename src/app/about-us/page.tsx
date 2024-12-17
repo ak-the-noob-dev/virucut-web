@@ -32,7 +32,7 @@ export default function AboutUs() {
         return;
       }
       const data = await res.data;
-      console.log("data on faq:", data);
+      // console.log("data on faq:", data);
       setApiData(data);
     } catch (error: unknown) {
       console.error("Failed to fetch about us data:", error);
@@ -49,7 +49,7 @@ export default function AboutUs() {
         return;
       }
       const data = await res.data;
-      console.log("data on faq:", data);
+      // console.log("data on faq:", data);
       setEmpData(data);
     } catch (error: unknown) {
       console.error("Failed to fetch about us data:", error);

@@ -7,7 +7,6 @@ import Home from "@/types/home";
 
 export default function HeroSlider({ hero }: { hero: Home["hero"] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % hero.length);
   };

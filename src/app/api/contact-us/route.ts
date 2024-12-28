@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   // Email options
   const mailOptions = {
     from: "vibaneshram@gmail.com",
-    to: "thebackendtech1011@gmail.com", //"inquiry@virucut.in",
+    to: "inquiry@virucut.in",
     subject: `New Contact Form Submission from ${name}`,
     html: `<!DOCTYPE html>
             <html lang="en">

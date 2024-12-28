@@ -31,6 +31,6 @@ export async function makeApiCall(params: MakeApiCall) {
 
 export function getImageUrl(image: string): string {
   if (!image || image === "")
-    return "https://placehold.co/1200x800?text=virucut";
+    return `${process.env.BASE_URL}/api/static/images/placeholder.svg`;
   return `${process.env.API_URL}${image}`;
 }

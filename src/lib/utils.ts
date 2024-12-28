@@ -29,7 +29,8 @@ export async function makeApiCall(params: MakeApiCall) {
   return response.json();
 }
 
-export function getImageUrl(image: string): string | null {
-  if (!image) return null;
+export function getImageUrl(image: string): string {
+  if (!image || image === "")
+    return "https://placehold.co/1200x800?text=virucut";
   return `${process.env.API_URL}${image}`;
 }

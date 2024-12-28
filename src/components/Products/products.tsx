@@ -44,8 +44,9 @@ export default function ProductsHero({
           ></HeroButton>
           <ModalWithForm
             id="crud-modal"
-            isOpen={isModalOpen}
+            isOpen={isModalOpen ? "#" : ""}
             onClose={() => setIsModalOpen(false)}
+            isEnquiry={false}
           />
         </div>
       </div>
@@ -109,7 +110,7 @@ export function HeroSlider({
               ></HeroButton> */}
               <ModalWithForm
                 id="crud-modal"
-                isOpen={isModalOpen}
+                isOpen={isModalOpen ? "#" : ""}
                 isEnquiry={isEnquiry}
                 onClose={() => setIsModalOpen(false)}
               />

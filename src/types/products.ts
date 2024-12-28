@@ -15,6 +15,11 @@ export interface Product {
     alternativeText?: string;
     name?: string;
   };
+  catalog: {
+    url?: string;
+    name?: string;
+    alternativeText?: string;
+  };
   id: string;
   desc?: string;
   subcategories?: {
@@ -26,6 +31,11 @@ export interface Product {
       alternativeText?: string;
       name?: string;
     };
+    catalog: {
+      url?: string;
+      name?: string;
+      alternativeText?: string;
+    };
     items: {
       name: string;
       desc?: string;
@@ -34,29 +44,15 @@ export interface Product {
         alternativeText?: string;
         name?: string;
       };
+      catalog: {
+        url?: string;
+        name?: string;
+        alternativeText?: string;
+      };
     }[];
   }[];
 }
-export interface SubCategories {
-  subCategories: SubCategory[];
-}
 
-export interface Products {
-  products: Product[];
-}
-
-export interface ProductSubItem {
-  name: string;
-  image?: string;
-  desc?: string;
-}
-
-export interface SubCategory {
-  name: string;
-  image: string;
-  desc?: string;
-  items?: ProductSubItem[];
-}
 export interface ProductsList {
   categoryName: string;
   categoryId: string;

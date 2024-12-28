@@ -17,7 +17,7 @@ export default function About({ aboutUs }: { aboutUs: Home }) {
                 alt="About Us Image 1"
                 className="rounded object-cover w-full h-full"
                 height="560"
-                src={getImageUrl(aboutUs?.about_image_1.url) || ""}
+                src={getImageUrl(aboutUs?.about_image_1?.url ?? "")}
                 width="450"
               />
             </div>
@@ -26,7 +26,7 @@ export default function About({ aboutUs }: { aboutUs: Home }) {
                 alt="About Us Image 3"
                 className="rounded object-cover w-full h-full"
                 height="300"
-                src={getImageUrl(aboutUs?.about_image_2?.url) || ""}
+                src={getImageUrl(aboutUs?.about_image_2?.url ?? "")}
                 width="250"
               />
             </div>
@@ -60,9 +60,9 @@ export default function About({ aboutUs }: { aboutUs: Home }) {
                 <div key={index} className="flex items-start space-x-2">
                   <IoCheckmarkCircle className="mt-0.5 h-5 w-5 text-green-500" />
                   <div className="space-y-1">
-                    <h3 className="font-bold">{item.title}</h3>
+                    <h3 className="font-bold">{item?.title}</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {item.description}
+                      {item?.description}
                     </p>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            {data.hero_title || "Your Productive Partner"}
+            {data?.hero_title || "Your Productive Partner"}
           </motion.h1>
           <motion.p
             className="mt-4 text-xl max-w-2xl mx-auto"
@@ -98,7 +98,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            {data.hero_desc ||
+            {data?.hero_desc ||
               "Delivering precision-engineered tools and innovative solutions to drive your business forward."}
           </motion.p>
         </div>
@@ -124,7 +124,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               transition={{ duration: 1 }}
             >
               <p>
-                {data.about_section_text_1 || (
+                {data?.about_section_text_1 || (
                   <>
                     At{" "}
                     <span className="font-semibold text-gray-900">
@@ -137,7 +137,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               </p>
 
               <p>
-                {data.about_section_text_2 || (
+                {data?.about_section_text_2 || (
                   <>
                     Our tools and systems are crafted to enhance productivity,
                     making us a trusted partner across industries. We are
@@ -156,12 +156,9 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               <Image
                 width={500}
                 height={500}
-                src={
-                  getImageUrl(data.about_section_image?.url || "") ||
-                  process.env.BASE_URL + `/api/static/images/hero3.jpg`
-                }
+                src={getImageUrl(data?.about_section_image?.url ?? "")}
                 alt={
-                  data.about_section_image?.name ||
+                  data?.about_section_image?.name ||
                   "Industrial Tools and Solutions"
                 }
                 className="w-full h-64 object-cover"
@@ -189,7 +186,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            {data.our_journey || (
+            {data?.our_journey || (
               <>
                 Established in 2018, VIRUCUT India Private Limited has rapidly
                 evolved into a leader in industrial tooling solutions, offering
@@ -212,10 +209,10 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               transition={{ duration: 0.8 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                {data.our_speciality?.[0]?.title || "Quality"}
+                {data?.our_speciality?.[0]?.title || "Quality"}
               </h4>
               <p className="text-gray-600">
-                {data.our_speciality?.[0]?.content ||
+                {data?.our_speciality?.[0]?.content ||
                   "We ensure excellence in every solution we provide, from precision tools to complete system designs."}
               </p>
             </motion.div>
@@ -227,10 +224,10 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                {data.our_speciality?.[2]?.title || "Innovation"}
+                {data?.our_speciality?.[2]?.title || "Innovation"}
               </h4>
               <p className="text-gray-600">
-                {data.our_speciality?.[2]?.content ||
+                {data?.our_speciality?.[2]?.content ||
                   "We embrace cutting-edge technologies to deliver innovative solutions that meet the unique needs of our clients."}
               </p>
             </motion.div>
@@ -242,10 +239,10 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h4 className="text-2xl font-bold text-gray-800 font-verdana">
-                {data.our_speciality?.[1]?.title || "Precision"}
+                {data?.our_speciality?.[1]?.title || "Precision"}
               </h4>
               <p className="text-gray-600">
-                {data.our_speciality?.[1]?.content ||
+                {data?.our_speciality?.[1]?.content ||
                   "Our commitment to precision ensures that every product andsolution is designed to perfection."}
               </p>
             </motion.div>
@@ -270,7 +267,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            {data.our_mission || (
+            {data?.our_mission || (
               <>
                 To deliver comprehensive, cutting-edge industrial solutions that
                 foster our customers&apos; growth and ensure the highest level
@@ -293,7 +290,7 @@ export function AboutUsPage({ data }: { data: AboutUsProps }) {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-            {data.our_vision || (
+            {data?.our_vision || (
               <>
                 To broaden our brand presence across industries, empowering
                 businesses of all sizes to thrive with innovative, reliable

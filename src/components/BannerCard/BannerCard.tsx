@@ -70,7 +70,7 @@ export default function BannerCard({
           </div> */}
 
           <SmallCard
-            imageSrc={getImageUrl(item.image.url || "") || ""}
+            imageSrc={getImageUrl(item?.image?.url ?? "")}
             text={item.categoryName}
           />
         </Link>

@@ -53,3 +53,50 @@ npm run strapi import -- -f /prod --force --key virucut
 
 cp -r ./virucut-web/admin-panel/src/api ./virucut-admin/src/api
 cp -r ./virucut-web/admin-panel/src/components ./virucut-admin/src/components
+pm2 start npm --name virucut_web_dy -- start
+
+sudo apt install mariadb-server php8.0 php8.0-fpm php8.0-gd php8.0-mysql
+
+
+CREATE DATABASE suitecrm_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE USER 'suitecrm_user'@'localhost' IDENTIFIED BY '_virucut_2024_crm';
+GRANT ALL PRIVILEGES ON suitecrm_db.* TO 'suitecrm_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+
+cd /var/www/
+sudo wget https://suitecrm.com/files/156/SuiteCRM-8.0/723/SuiteCRM-8.0.3.zip -O suitecrm.zip
+sudo unzip suitecrm.zip
+sudo mv SuiteCRM-* suitecrm
+
+
+server {
+    listen 80;
+    server_name crm.virucut.in;
+    root /var/www/html/suite-crm/public;
+
+    index index.php index.html;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.0-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/crm.virucut.in /etc/nginx/sites-enabled/
+sudo nginx -t
+
+sudo certbot --nginx -d crm.virucut.in
+
+sudo apt install mariadb-server php8.0 php8.0-fpm php8.0-gd php8.0-mysql

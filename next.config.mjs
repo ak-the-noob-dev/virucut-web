@@ -8,8 +8,8 @@ const nextConfig = {
   images: {
     domains: [
       "virucut.in",
-      "192.168.93.81",
-      "via.placeholder.com",
+      "192.168.123.81",
+      "placehold.co",
       "admin.virucut.in",
     ],
   },

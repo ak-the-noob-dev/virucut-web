@@ -65,6 +65,7 @@ export function ProductSingleViewLimit({
             id="crud-modal"
             isOpen={isModalOpen}
             onClose={() => setIsModalOpen(false)}
+            isEnquiry={false}
           />
           <div className="mt-8">
             <h3 className="text-lg font-bold text-gray-800">
@@ -90,7 +91,6 @@ export function OurProducts() {
   const defaultScroll = 50; // Initial scroll position
   const [productData, setProductData] = useState<ProductsList[]>([]); // Store fetched product data
   const scrollContainerRef = useRef<HTMLDivElement | null>(null); // Ref for the scrollable container
-
   // Fetch products on component mount
   useEffect(() => {
     const getProducts = async () => {
@@ -131,11 +131,11 @@ export function OurProducts() {
           <div className="flex flex-nowrap gap-0 md:gap-5">
             {productData.map((product, i) => (
               <CardWithBackImage
-                href={`/products/${product.categoryId}`}
+                href={`/products/${product?.categoryId}`}
                 key={i}
                 cardKey={i}
-                imagePath={getImageUrl(product?.image?.url || "") || ""}
-                productName={product.categoryName}
+                imagePath={getImageUrl(product?.image?.url ?? "")}
+                productName={product?.categoryName}
               />
             ))}
           </div>
@@ -156,9 +156,12 @@ export function ProductsWCategory({
   if (!subCategories || subCategories.length === 0) {
     return (
       <section className="w-full bg-blue-100 pt-10 pb-10 flex items-center flex-col">
-        <h6 className="text-3xl font-bold tracking-tighter sm:text-5xl font-verdana text-center mb-16 pt-10">
-          Contact us for more information
+        <h6 className="text-2xl font-bold tracking-tighter sm:text-5xl font-verdana text-center mb-16 pt-10">
+          Tailored Solutions, Crafted for Your Unique Needs.
         </h6>
+        <h3 className="text-sm font-bold tracking-tighter md:text-lg font-verdana text-center mb-4">
+          Contact Us for Customized Solutions
+        </h3>
         <button
           className="rounded-none bg-white px-6 py-2 text-sm font-semibold text-black transition-colors hover:bg-green-500 hover:text-white"
           onClick={() => setIsModalOpen(true)}
@@ -186,6 +189,49 @@ export function ProductsWCategory({
     }
   }
 
+  const handleDownload = async (file: string) => {
+    try {
+      if (file === "") {
+        return;
+      }
+      let downloadUrl = file;
+      if (file === "companyProfilePdf" || file === "#") {
+        downloadUrl = urls?.companyProfilePdf;
+      }
+      const url1 = `${process.env.API_URL}${downloadUrl}`;
+      const response = await fetch(url1, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/pdf",
+        },
+      });
+      if (!response.ok) throw new Error("Failed to download file");
+      const success = await Promise.all([
+        response.blob(),
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(true);
+          }, 6000);
+        }),
+      ]);
+      // console.log("success", success[0]);
+      // const blo = await response.blob();
+      const url = window.URL.createObjectURL(success[0]);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = url.split("/").pop() || "downloaded-file";
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => {
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    } catch (error) {
+      console.error("Failed to download file:", error);
+    }
+  };
+
   return (
     <section className=" w-full bg-blue-100 pt-10">
       <h6 className="text-3xl font-bold tracking-tighter sm:text-5xl font-verdana text-center mb-4 pt-10">
@@ -198,7 +244,7 @@ export function ProductsWCategory({
             <div key={index} className="my-4 gap-8 bg-blue-100">
               <ProductSingleViewLimit
                 key={index}
-                desc={sub.desc ?? ""}
+                desc={sub?.desc ?? ""}
                 // bgColor={index % 2 === 0 ? "bg-blue-100" : "bg-white"}
                 bgColor="bg-blue-100"
                 reverseImage={index % 2 !== 0}
@@ -207,19 +253,19 @@ export function ProductsWCategory({
               />
               <div className="mb-10">
                 <h6 className="text-xl font-bold tracking-tighter sm:text-3xl font-verdana text-center py-14 bg-white">
-                  Collections of : {sub.name}
+                  Collections of : {sub?.name}
                 </h6>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-20 bg-white">
-                  {sub.items &&
-                    sub.items.map((subcategory, index) => (
+                  {sub?.items &&
+                    sub?.items?.map((subcategory, index) => (
                       <div
                         key={index}
                         className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
                       >
                         <div className="w-full h-64 bg-gray-100 bg-center bg-cover rounded-lg shadow-md">
                           <Image
-                            src={getImageUrl(subcategory.image.url || "") || ""}
-                            alt={subcategory.name}
+                            src={getImageUrl(subcategory?.image?.url || "")}
+                            alt={subcategory?.name}
                             width={300}
                             height={300}
                             className="w-72 h-26 md:w-full md:h-full object-contain p-5"
@@ -228,13 +274,18 @@ export function ProductsWCategory({
 
                         <div className="w-56 -mt-10 overflow-hidden bg-white border-1 rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
                           <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-                            {subcategory.name}
+                            {subcategory?.name}
                           </h3>
 
                           <div className="flex items-center  px-3 py-2 bg-gray-300 dark:bg-gray-700 justify-center">
                             <button
                               className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none"
-                              onClick={() => setIsModalOpen(true)}
+                              onClick={() => {
+                                handleDownload(
+                                  subcategory?.catalog?.url || "#"
+                                );
+                                setIsModalOpen(true);
+                              }}
                             >
                               know more
                             </button>
@@ -247,24 +298,24 @@ export function ProductsWCategory({
             </div>
           );
         })}
-      {subWOutItems.length > 0 && (
+      {subWOutItems?.length > 0 && (
         <div className="bg-blue-100">
-          {subWItems.length !== 0 && (
+          {subWItems?.length !== 0 && (
             <h6 className="text-xl font-bold tracking-tighter sm:text-3xl font-verdana text-center ">
               Our other Collections
             </h6>
           )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-20 py-10 bg-blue-100">
             {subWOutItems &&
-              subWOutItems.map((subcategory, index) => (
+              subWOutItems?.map((subcategory, index) => (
                 <div
                   key={index}
                   className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
                 >
                   <div className="w-full h-64 bg-white bg-center bg-cover rounded-lg shadow-md">
                     <Image
-                      src={getImageUrl(subcategory?.image?.url || "") || ""}
-                      alt={subcategory.name ?? ""}
+                      src={getImageUrl(subcategory?.image?.url ?? "")}
+                      alt={subcategory?.name ?? ""}
                       width={300}
                       height={300}
                       className="w-full h-full object-contain p-5"
@@ -273,13 +324,16 @@ export function ProductsWCategory({
 
                   <div className="w-56 -mt-10 overflow-hidden bg-gray-100 rounded-lg shadow-lg md:w-64 dark:bg-gray-800">
                     <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
-                      {subcategory.name}
+                      {subcategory?.name}
                     </h3>
 
                     <div className="flex items-center  px-3 py-2 bg-gray-300 dark:bg-gray-700 justify-center">
                       <button
                         className="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-gray-800 rounded hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none"
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={() => {
+                          handleDownload(subcategory?.catalog?.url || "#");
+                          setIsModalOpen(true);
+                        }}
                       >
                         know more
                       </button>
@@ -293,7 +347,7 @@ export function ProductsWCategory({
       <ModalWithForm
         id="crud-modal"
         isOpen={isModalOpen}
-        isEnquiry={true}
+        isEnquiry={false}
         onClose={() => setIsModalOpen(false)}
       />
     </section>

@@ -66,9 +66,9 @@ export default function CareersPage() {
 
   const filteredJobs = jobs.filter(
     (job) =>
-      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.location.toLowerCase().includes(searchTerm.toLowerCase())
+      job?.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.department.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      job?.location.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const totalPages = Math.ceil(totalJobs / pageSize);
@@ -119,7 +119,7 @@ export default function CareersPage() {
                       <JobSkeleton key={index} />
                     ))
                   : filteredJobs.map((job) => (
-                      <JobCard key={job.id} job={job} />
+                      <JobCard key={job?.id} job={job} />
                     ))}
               </div>
 
@@ -178,16 +178,16 @@ function JobCard({ job }: { job: Job }) {
       <CardHeader>
         <CardTitle className="flex justify-between items-start">
           <div>
-            <h3 className="text-2xl font-bold">{job.title}</h3>
+            <h3 className="text-2xl font-bold">{job?.title}</h3>
             <p className="text-sm text-muted-foreground mt-1">
-              {job.department}
+              {job?.department}
             </p>
           </div>
-          <Badge variant="secondary">{job.type}</Badge>
+          <Badge variant="secondary">{job?.type}</Badge>
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="mb-4">{job.description}</p>
+        <p className="mb-4">{job?.description}</p>
         <div className="flex items-center text-sm text-muted-foreground">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,7 @@ function JobCard({ job }: { job: Job }) {
               d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
             />
           </svg>
-          {job.location}
+          {job?.location}
         </div>
       </CardContent>
       <CardFooter>

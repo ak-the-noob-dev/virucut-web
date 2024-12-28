@@ -66,7 +66,7 @@ export default function SingleProductView() {
 
       {/* This hero component will cover the name and desc image of the product type*/}
       <HeroSlider
-        imgUrl={getImageUrl(productData?.image?.url || "") || ""}
+        imgUrl={getImageUrl(productData?.image?.url || "")}
         className=""
         name={`${productData?.categoryName || "Product"}`}
         desc={`${productData?.desc || "awesome products to check out"}`}

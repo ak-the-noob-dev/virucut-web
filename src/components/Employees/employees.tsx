@@ -77,8 +77,7 @@ export default function Employees() {
 }
 
 export function Md({ data }: { data: EmployeeProps }) {
-  const uri: string =
-    getImageUrl(data?.image?.url || "") || "/images/vijayakanth.webp";
+  const uri: string = getImageUrl(data?.image?.url ?? "");
   return (
     <section className=" bg-gray-50">
       <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center p-16 font-verdana">
@@ -88,30 +87,32 @@ export function Md({ data }: { data: EmployeeProps }) {
         <div className="w-full h-auto justify-center items-center flex">
           <Image
             src={uri}
-            alt={data.name || "Vijayakanth V"}
+            alt={data?.name || "Vijayakanth V"}
             width={400}
             height={400}
             className="w-full max-w-96 h-auto object-cover rounded-lg"
           />
         </div>
         <div className="flex flex-col gap-3 font-verdana">
-          <h3 className="font-bold text-2xl">{data.name || "Vijayakanth V"}</h3>
+          <h3 className="font-bold text-2xl">
+            {data?.name || "Vijayakanth V"}
+          </h3>
           <p className="text-xs font-bold md:text-sm text-muted-foreground">
-            {data.role || "Managing Director"}
+            {data?.role || "Managing Director"}
           </p>
-          {data.employee_desc && data.employee_desc.length > 0 && (
+          {data?.employee_desc && data?.employee_desc.length > 0 && (
             <>
-              {data.employee_desc.map((e, i) => {
+              {data?.employee_desc?.map((e, i) => {
                 if (i === 0) {
                   return (
                     <p key={i} className="text-sm font-verdana mt-5 md:mt-8">
-                      {e.desc}
+                      {e?.desc}
                     </p>
                   );
                 }
                 return (
                   <p key={i} className="text-sm font-verdana">
-                    {e.desc}
+                    {e?.desc}
                   </p>
                 );
               })}

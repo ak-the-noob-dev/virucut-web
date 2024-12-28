@@ -1,0 +1,122 @@
+.
+├── README.md
+├── contact.html
+├── next-env.d.ts
+├── next.config.mjs
+├── notes.txt
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   └── images
+│       ├── logo.png
+│       ├── logo.svg
+│       ├── vrv-logo.jpeg
+│       └── vrvA2Z.png
+├── src
+│   ├── app
+│   │   ├── 404.tsx
+│   │   ├── about-us
+│   │   │   └── page.tsx
+│   │   ├── api
+│   │   │   ├── contact-us
+│   │   │   │   └── route.ts
+│   │   │   └── static
+│   │   │       └── images
+│   │   │           └── [image]
+│   │   │               └── route.ts
+│   │   ├── blog
+│   │   │   ├── [title]
+│   │   │   │   └── page.tsx
+│   │   │   └── page.tsx
+│   │   ├── careers
+│   │   │   └── page.tsx
+│   │   ├── contact
+│   │   │   └── page.tsx
+│   │   ├── contact-us
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── fonts
+│   │   │   ├── GeistMonoVF.woff
+│   │   │   └── GeistVF.woff
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── products
+│   │       ├── [id]
+│   │       │   └── page.tsx
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── About
+│   │   │   └── About.tsx
+│   │   ├── Banner
+│   │   │   └── Banner.tsx
+│   │   ├── BannerCard
+│   │   │   └── BannerCard.tsx
+│   │   ├── Blog
+│   │   │   └── Blog.tsx
+│   │   ├── Buttons
+│   │   │   └── Buttons.tsx
+│   │   ├── Careers
+│   │   │   └── Careers.tsx
+│   │   ├── Chart
+│   │   │   └── Chart.tsx
+│   │   ├── Clients
+│   │   │   ├── Clients.tsx
+│   │   │   └── clients.css
+│   │   ├── Contactus
+│   │   │   └── Contactus.tsx
+│   │   ├── DataCard
+│   │   │   └── DataCard.tsx
+│   │   ├── Employees
+│   │   │   └── employees.tsx
+│   │   ├── FAQ
+│   │   │   └── FAQ.tsx
+│   │   ├── Footer
+│   │   │   └── Footer.tsx
+│   │   ├── Header
+│   │   │   └── Header.tsx
+│   │   ├── Hero
+│   │   │   └── Hero.tsx
+│   │   ├── Mission
+│   │   │   └── Mission.tsx
+│   │   ├── Modal
+│   │   │   └── modalWForm.tsx
+│   │   ├── MotionBanner
+│   │   │   └── Motion-Banner.tsx
+│   │   ├── ProductView
+│   │   │   └── productView.tsx
+│   │   ├── Products
+│   │   │   └── products.tsx
+│   │   ├── Services
+│   │   │   └── Services.tsx
+│   │   └── ui
+│   │       ├── badge.tsx
+│   │       ├── button.tsx
+│   │       ├── input.tsx
+│   │       └── skeleton.tsx
+│   ├── constant
+│   │   └── url.ts
+│   ├── json
+│   │   ├── faq.json
+│   │   ├── home.json
+│   │   └── products.json
+│   ├── lib
+│   │   ├── smtp.ts
+│   │   └── utils.ts
+│   ├── styles
+│   │   ├── header.css
+│   │   └── products.page.css
+│   └── types
+│       ├── about.ts
+│       ├── blog.ts
+│       ├── careers.ts
+│       ├── common.ts
+│       ├── employee.ts
+│       ├── home.ts
+│       └── products.ts
+├── structure.txt
+├── tailwind.config.ts
+└── tsconfig.json
+
+47 directories, 73 files

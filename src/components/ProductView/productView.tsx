@@ -19,8 +19,52 @@ export function ProductSingleViewLimit({
   productName,
   image,
   desc,
+  file,
 }: ProductSingleViewLimitProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleDownload = async (file: string) => {
+    try {
+      if (file === "") {
+        return;
+      }
+      let downloadUrl = file;
+      if (file === "companyProfilePdf" || file === "#") {
+        downloadUrl = urls?.companyProfilePdf;
+      }
+      const url1 = `${process.env.API_URL}${downloadUrl}`;
+      const response = await fetch(url1, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/pdf",
+        },
+      });
+      if (!response.ok) throw new Error("Failed to download file");
+      const success = await Promise.all([
+        response.blob(),
+        new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(true);
+          }, 6000);
+        }),
+      ]);
+      // console.log("success", success[0]);
+      // const blo = await response.blob();
+      const url = window.URL.createObjectURL(success[0]);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = url.split("/").pop() || "downloaded-file";
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      setTimeout(() => {
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    } catch (error) {
+      console.error("Failed to download file:", error);
+    }
+  };
+
   return (
     <div
       className={`font-sans p-16 tracking-wide max-lg:max-w-2xl mx-auto ${bgColor}`}
@@ -56,7 +100,10 @@ export function ProductSingleViewLimit({
 
           <div className="flex flex-wrap gap-4 mt-8">
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                setIsModalOpen(true);
+                handleDownload(file?.url || "#");
+              }}
               type="button"
               className="min-w-[200px] px-4 py-3 bg-green-400 hover:bg-green-500 text-white text-sm font-semibold rounded-lg"
             >
@@ -251,6 +298,7 @@ export function ProductsWCategory({
                 reverseImage={index % 2 !== 0}
                 productName={sub.name ?? ""}
                 image={getImageUrl(sub?.image?.url || "") || ""}
+                file={sub?.catalog || {}}
               />
               <div className="mb-10">
                 <h6 className="text-xl font-bold tracking-tighter sm:text-3xl font-verdana text-center py-14 bg-white">

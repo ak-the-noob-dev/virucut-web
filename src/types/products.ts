@@ -4,6 +4,11 @@ export interface ProductSingleViewLimitProps {
   productName: string;
   image: string;
   desc: string;
+  file: {
+    url?: string;
+    name?: string;
+    alternativeText?: string;
+  };
 }
 
 export interface Product {

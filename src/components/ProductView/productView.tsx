@@ -47,7 +47,9 @@ export function ProductSingleViewLimit({
             <h2 className="text-2xl font-extrabold text-gray-800">
               {productName}
             </h2>
-            <p className="text-sm text-gray-600 mt-2">Fine edge product</p>
+            <p className="text-sm text-gray-600 mt-2">
+              {desc ? desc : "No description provided"}
+            </p>
           </div>
 
           <div className="flex space-x-1 mt-4">{/* Rating stars */}</div>
@@ -67,20 +69,19 @@ export function ProductSingleViewLimit({
             onClose={() => setIsModalOpen(false)}
             isEnquiry={false}
           />
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h3 className="text-lg font-bold text-gray-800">
               Product Description
             </h3>
             <p className="text-sm text-gray-600 mt-4">
               {desc ? desc : "No description provided"}
-            </p>
-
-            {/* <ul className="space-y-3 list-disc mt-6 pl-4 text-sm text-gray-600">
+            </p> 
+            <ul className="space-y-3 list-disc mt-6 pl-4 text-sm text-gray-600">
               <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
               <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</li>
             </ul> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
